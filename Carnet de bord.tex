@@ -33,7 +33,27 @@
 
 \section{Carnet de bord des séances}
 \subsection{Séance 0 - 21/03/2023}
-blablabla
+\subsubsection{Notes prises au tableau}
+\begin{figure} [H]
+\includegraphics[width=1\textwidth]{Notes tableau séance 0.png} 
+\caption{Notes séance 0}
+\end{figure}
+
+\subsubsection{Idées de plan de recherches}
+\begin{itemize}
+\item \textbf{Caractérisation de la bobine} : mesure de la résistance et l'inductance de la bobine. Cela permettra de modéliser la bobine et de calculer le champ magnétique qu'elle produit
+\item \textbf{Modélisation de la bobine} : utilisation des valeurs mesurées pour construire un modèle électrique de la bobine, par exemple en utilisant l'équation de l'inductance d'une bobine. Pour une précision plus élevée, il peut être nécessaire d'inclure d'autres effets tels que la saturation du noyau de la bobine ou la résistance série équivalente
+\item \textbf{Étude du champ magnétique de la bobine} : calcul de la distribution du champ magnétique à l'aide d'un logiciel de simulation. Validation des résultats expérimentalement
+\item \textbf{Choix d'un capteur de distance} : choix d'un capteur de distance infrarouge adapté à la plage de mesure et à la précision requises. La fréquence de mesure et la plage de mesure peuvent influencer le résultat
+\item \textbf{Calibration du capteur de distance} : déterminer la relation entre la tension de sortie du capteur et la distance de la bille par rapport à la bobine
+\item \textbf{Conception d'un correcteur } : utiliser les données obtenues précédemment pour concevoir un correcteur proportionnel-intégral-dérivé (PID) ou un correcteur à avance de phase pour contrôler la position de la bille. C'est la partie clé de ce projet. Le correcteur PID est une méthode de contrôle classique qui est souvent utilisée pour les systèmes de positionnement. Un correcteur à avance de phase peut également être utilisé pour améliorer les performances.
+\item \textbf{Implémentation du correcteur } : test du correcteur via Matlab et Simulink
+\item \textbf{Étalonnage du système} : ajuster les paramètres du correcteur pour atteindre la précision et la stabilité requises
+\item \textbf{Validation du système} : tester le système dans différentes conditions et valider ses performances
+\item \textbf{Optimisation du système} : améliorer le système en optimisant les paramètres du correcteur et en utilisant des techniques avancées de contrôle, telles que le contrôle prédictif et le contrôle adaptatif
+\end{itemize}
+\medskip
+Il est important de noter que certains des points ont déjà été réalisés lors du premier semestre
 
 \section{Bibliographie}
 Liste des sites utilisés pour la réalisation du projet :
