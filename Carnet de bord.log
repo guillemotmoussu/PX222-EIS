@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.2.19)  4 APR 2023 23:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.2.19)  5 APR 2023 09:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1192,7 +1192,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  [1
 
 {C:/Users/guill/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-<Notes tableau séance 0.png, id=41, 1259.4553pt x 677.53125pt>
+<Notes tableau séance 0.png, id=58, 1259.4553pt x 677.53125pt>
 File: Notes tableau séance 0.png Graphic file (type png)
 <use Notes tableau séance 0.png>
 Package pdftex.def Info: Notes tableau séance 0.png  used on input line 38.
@@ -1203,24 +1203,31 @@ s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.54 \end{itemize}
-                   <./Notes tableau séance 0.png>] [3] (Carnet de bord.aux)
+                   <./Notes tableau séance 0.png>]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 67.
 
-Package rerunfilecheck Warning: File `"Carnet de bord".out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
 
-Package rerunfilecheck Info: Checksums for `"Carnet de bord".out':
-(rerunfilecheck)             Before: 9376A5CAD0960C5578E1F40B816E4B74;687
-(rerunfilecheck)             After:  6F694B2ADF60A483E80A6038B9DE41DB;878.
+(C:\Users\guill\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+[3
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.86 \section
+             {Bibliographie}] [4] (Carnet de bord.aux)
+Package rerunfilecheck Info: File `"Carnet de bord".out' has not changed.
+(rerunfilecheck)             Checksum: AF5FFA320B887D3F2E888851C16F7233;1356.
  ) 
 Here is how much of TeX's memory you used:
- 52598 strings out of 476374
- 1363127 string characters out of 5788854
- 1997290 words of memory out of 5000000
- 72343 multiletter control sequences out of 15000+600000
- 525766 words of font info for 67 fonts, out of 8000000 for 9000
+ 53188 strings out of 476374
+ 1379118 string characters out of 5788854
+ 2005294 words of memory out of 5000000
+ 72924 multiletter control sequences out of 15000+600000
+ 526474 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,6n,89p,736b,995s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,9n,89p,736b,995s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm
 0800.pk> <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\eccc1095.pk> <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
@@ -1230,10 +1237,17 @@ pen/ec/dpi600\ecrm1095.pk> <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/ljfour
 ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\guill\AppData\Local\MiKTeX\fon
 ts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\guill\AppData\Local\MiKT
 eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\guill\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk>
-Output written on "Carnet de bord.pdf" (3 pages, 862214 bytes).
+l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk><C:/Users/guill/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/guil
+l/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Us
+ers/guill/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pf
+b><C:/Users/guill/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmr8.pfb><C:/Users/guill/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmsy10.pfb><C:/Users/guill/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/euler/eufm10.pfb>
+Output written on "Carnet de bord.pdf" (4 pages, 924262 bytes).
 PDF statistics:
- 270 PDF objects out of 1000 (max. 8388607)
- 12 named destinations out of 1000 (max. 500000)
- 50 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 330 PDF objects out of 1000 (max. 8388607)
+ 16 named destinations out of 1000 (max. 500000)
+ 74 words of extra memory for PDF output out of 10000 (max. 10000000)
 

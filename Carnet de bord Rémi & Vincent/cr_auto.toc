@@ -1,0 +1,6 @@
+\contentsline {section}{\numberline {1}Découverte du projet}{2}{section.1}%
+\contentsline {section}{\numberline {2}Début du projet}{2}{section.2}%
+\contentsline {section}{\numberline {3}Idée : pilotage de l'alimentation par USB}{3}{section.3}%
+\contentsline {section}{\numberline {4}Etude du capteur Sharp}{6}{section.4}%
+\contentsline {section}{\numberline {5}Mesure des caractéristiques de la bobine}{6}{section.5}%
+\contentsline {section}{\numberline {6}Détermination de la fonction de transfert}{6}{section.6}%

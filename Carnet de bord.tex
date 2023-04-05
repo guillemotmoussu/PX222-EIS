@@ -55,6 +55,34 @@
 \medskip
 Il est important de noter que certains des points ont déjà été réalisés lors du premier semestre
 
+\subsection{Séance 1 - 05/04/2023}
+\subsubsection{Reprise des éléments du semestre précédent}
+Avec Hopkinson, nous avions obtenu un schéma équivalent de la bobine : 
+\begin{figure}[H]
+\begin{center}
+\begin{circuitikz}
+\draw
+(0,0) to [V=$\varepsilon$] (0,2)
+(0,2) to [short, i=$\varphi$] (2,2)
+(2,2) to [R, l=$\mathfrak{R}_1$] (2,0)
+(2,0) to [short] (0,0)
+(2,2) to [R, l=$\mathfrak{R}(z)$, *-] (5,2)
+(2,0) to [R, l=$\mathfrak{R}_0$, *-] (5,0)
+(5,2) to [short] (5,0);
+\end{circuitikz}
+\caption{Modélisation de la bobine}
+\end{center}
+\end{figure}
+
+Nous avions trouvé que la fonction de transfert de la bobine est : $\boxed{T_{BO}=\dfrac{Z}{I}=\dfrac{k_i}{k_z-mp^2}}$\\
+Avec les valeurs suivantes :\\
+\medskip
+$I_0 = 2A$, $Z_0 = 22mm$, $L_1 = 6.73H$, $\alpha = 2.06$, $m = 35.8g$\\
+$k_i = \dfrac{I_0 \cdot L_1 \cdot \alpha}{(1 + \alpha \cdot Z_0)^2}$, $k_z = \dfrac{I_0^2 \cdot L_1 \cdot \alpha^2}{(1 + \alpha \cdot Z_0)^3}$
+
+
+
+\pagebreak
 \section{Bibliographie}
 Liste des sites utilisés pour la réalisation du projet :
 \begin{itemize}

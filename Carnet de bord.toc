@@ -3,4 +3,6 @@
 \contentsline {subsection}{\numberline {1.1}Séance 0 - 21/03/2023}{2}{subsection.1.1}%
 \contentsline {subsubsection}{\numberline {1.1.1}Notes prises au tableau}{2}{subsubsection.1.1.1}%
 \contentsline {subsubsection}{\numberline {1.1.2}Idées de plan de recherches}{2}{subsubsection.1.1.2}%
-\contentsline {section}{\numberline {2}Bibliographie}{3}{section.2}%
+\contentsline {subsection}{\numberline {1.2}Séance 1 - 05/04/2023}{3}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Reprise des éléments du semestre précédent}{3}{subsubsection.1.2.1}%
+\contentsline {section}{\numberline {2}Bibliographie}{4}{section.2}%
