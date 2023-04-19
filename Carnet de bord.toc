@@ -1,19 +1,26 @@
 \babel@toc {french}{}\relax 
-\contentsline {section}{\numberline {1}Séance 0 - 21/03/2023}{2}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Notes prises au tableau}{2}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Idées de plan de recherches}{2}{subsection.1.2}%
-\contentsline {section}{\numberline {2}Séance 1 - 05/04/2023}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Reprise des éléments du semestre précédent}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Utilisation de Matlab}{3}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Modélisation point par point du système}{5}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Modélisation de l'amplificateur}{5}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}Modélisation d'un régulateur PD}{6}{subsubsection.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.3.3}Modélisation d'un régulateur PID}{6}{subsubsection.2.3.3}%
-\contentsline {subsubsection}{\numberline {2.3.4}Modélisation du système complet (PD)}{7}{subsubsection.2.3.4}%
-\contentsline {subsection}{\numberline {2.4}Conclusions pour cette séance}{7}{subsection.2.4}%
-\contentsline {section}{\numberline {3}Travail entre les séance 1 et 2}{7}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Correction des éléments de la séance précédente}{7}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Matlab}{7}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Modélisation point par point du système}{7}{subsubsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.2}Simulation de l'amplificateur}{8}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Bibliographie}{9}{section.4}%
+\contentsline {section}{\numberline {1}Séance 0 - 21/03/2023}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Notes prises au tableau}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Idées de plan de recherches}{3}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Séance 1 - 05/04/2023}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Reprise des éléments du semestre précédent}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Utilisation de Matlab}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Modélisation point par point du système}{6}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Modélisation de l'amplificateur}{6}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Modélisation d'un régulateur PD}{7}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Modélisation d'un régulateur PID}{7}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}Modélisation du système complet (PD)}{8}{subsubsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.4}Conclusions pour cette séance}{8}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Travail entre les séance 1 et 2}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Correction des éléments de la séance précédente}{8}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Matlab}{8}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Modélisation point par point du système}{8}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}Simulation de l'amplificateur}{9}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Séance 2 - 18/04/2023}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Réflexion sur la numérisation du correcteur}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Prise en main du STM8s}{10}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Premier essai de code}{10}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Essais avec Arduino}{10}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Essais avec STVD}{11}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Conclusions pour cette séance}{12}{subsection.4.6}%
+\contentsline {section}{\numberline {5}Bibliographie}{13}{section.5}%

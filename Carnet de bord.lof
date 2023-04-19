@@ -1,15 +1,17 @@
 \babel@toc {french}{}\relax 
-\contentsline {figure}{\numberline {1}{\ignorespaces Notes séance 0}}{2}{figure.1}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Modélisation de la bobine}}{3}{figure.2}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Bode obtenu}}{4}{figure.3}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Nyquist obtenu}}{4}{figure.4}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Schéma bloc du système}}{5}{figure.5}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Amplificateur à AOP}}{5}{figure.6}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Modélisation du bloc amplificateur}}{5}{figure.7}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Régulateur PD}}{6}{figure.8}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Modélisation du bloc régulateur (PD)}}{6}{figure.9}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Régulateur PID}}{6}{figure.10}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Modélisation complète avec retour (PD)}}{7}{figure.11}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Résulat idéal de la simulation}}{8}{figure.12}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Schéma LTSPICE de l'amplificateur}}{8}{figure.13}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Simulation de l'amplificateur}}{8}{figure.14}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Notes séance 0}}{3}{figure.1}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Modélisation de la bobine}}{4}{figure.2}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Bode obtenu}}{5}{figure.3}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Nyquist obtenu}}{5}{figure.4}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Schéma bloc du système}}{6}{figure.5}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Amplificateur à AOP}}{6}{figure.6}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Modélisation du bloc amplificateur}}{6}{figure.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Régulateur PD}}{7}{figure.8}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Modélisation du bloc régulateur (PD)}}{7}{figure.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Régulateur PID}}{7}{figure.10}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Modélisation complète avec retour (PD)}}{8}{figure.11}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Résulat idéal de la simulation}}{9}{figure.12}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Schéma LTSPICE de l'amplificateur}}{9}{figure.13}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Simulation de l'amplificateur}}{9}{figure.14}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Schéma bloc du système, version électronique numérique}}{10}{figure.15}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Brochage du STM8s discovery}}{10}{figure.16}%

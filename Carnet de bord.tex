@@ -27,6 +27,26 @@
 \author{Guillemot MOUSSU et Rémi MAZZONE}
 \date{2° semestre - 2022-2023}
 
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+language=Python,
+aboveskip=3mm,
+belowskip=3mm,
+showstringspaces=false,
+columns=flexible,
+basicstyle={\small\ttfamily},
+numbers=left,
+numberstyle=\tiny\color{gray},
+keywordstyle=\color{blue},
+commentstyle=\color{dkgreen},
+stringstyle=\color{mauve},
+breaklines=true,
+breakatwhitespace=true,
+tabsize=3} 
+
 \begin{document}
 \maketitle
 \tableofcontents
@@ -269,9 +289,9 @@ Dans le cas où l'on souhaite finalement modéliser un régulateur PID, on doit 
 
 \subsubsection{Modélisation du système complet (PD)}
 \label{Modélisation complète}
-On choisit le régulateur PD pour représenter le système complet. On a vu qu'il suffira d'ajouter une capacité pour passer à un régulateur PID au besoin. On repère bien les blocs comparateur, amplificateur et régulateur
+On choisit le régulateur PD pour représenter le système complet. On a vu qu'il suffira d'ajouter une capacité pour passer à un régulateur PID au besoin. On repère bien les blocs comparateur, amplificateur (A), régulateur (R) et capteur (B)
 
-\begin{figure} [H]
+\begin{figure} [H]a	
 \begin{center}
 \includegraphics[width=1\textwidth]{Schémas/Modèle complet PD.png} 
 \end{center}
@@ -337,12 +357,129 @@ Et on obtient le résultat suivant :
 On remarque que la simulation correspond au modèle théorique voulu. C'est bon signe pour la suite, il reste à le tester avec des composants réels
 
 \pagebreak
+\section{Séance 2 - 18/04/2023}
+\subsection{Réflexion sur la numérisation du correcteur}
+On va donc chercher à numériser la partie correcteur. Cela correspond aux éléments suivants sur notre schéma bloc :
+\begin{figure} [H]
+\begin{center}
+\begin{tikzpicture}
+\sbEntree{E}
+\sbSumb{comp}{E}                
+\sbRelier[$C$]{E}{comp}
+\sbStyleBloc{red,very thick}
+\sbBloc{reg}{$R$}{comp}  
+\sbRelier[$\varepsilon$]{comp}{reg}
+\sbStyleBlocDefaut
+\sbBloc{amp}{$A$}{reg}
+\sbRelier[$U$]{reg}{amp}
+\sbBloc{sys}{$H$}{amp}      
+\sbRelier[$X$]{amp}{sys}
+\sbSortie{S}{sys}                
+\sbRelier[$Y$]{sys}{S}
+\sbDecaleNoeudy[4]{S}{U}
+\sbStyleBloc{red,very thick}
+\sbBlocr{cap}{$B$}{U}        
+\sbRelieryx{sys-S}{cap}
+\sbRelierxy[$Y_m$]{cap}{comp}
+\end{tikzpicture}
+\end{center}
+\caption{Schéma bloc du système, version électronique numérique}
+\end{figure}
+
+On utilisera un STM8s pour la numérisation. On compte utiliser un port analog input pour l'entrée venant du capteur, et un port I/O piloté en PWM pour la sortie $U$
+
+\subsection{Prise en main du STM8s}
+On a le brochage du STM8 :
+\begin{figure} [H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{Schémas/Brochage STM8.jpg} 
+\end{center}
+\caption{Brochage du STM8s discovery}
+\end{figure}
+
+On définit pour le moment qu'on utilise le port $B0$ (Analog 0) pour l'entrée et le port $G0$ pour la sortie (I/O classique)
+
+\subsection{Premier essai de code}
+Par la suite, nous avons cherché à faire fonctionner la carte, en vue de pouvoir faire nos mesures. On se base sur l'exemple fourni par ST permettant de faire clignoter la LED installée sur la carte : \href {https://www.st.com/en/embedded-software/stsw-stm8023.html}{\color{blue} fichiers du projet}. Ce projet est écrit en C, compilé à l'aide de Cosmic. On confirme que cela fonctionne
+
+\subsection{Essais avec Arduino}
+\medskip
+Afin de pouvoir communiquer, notemment via la communication série avec la carte, on a essayé d'installer les librairies nécessaires sur l'Arduino IDE. On se base sur le travail de Michael Mayer pour le site \href {https://circuitdigest.com/microcontroller-projects/programming-stm8s-microcontrollers-using-arduino-ide}{\color{blue} CircuitDigest}. Malgré de nombreuses tentatives, nous n'avons pas réussi à compiler un projet et à l'envoyer sur la carte\\
+
+Sur nos PC, nous obtenons l'erreur suivante :
+\begin{lstlisting}
+Installing platform sduino:stm8@0.5-pre2
+Failed to install platform: sduino:stm8.
+Error: 13 INTERNAL: Cannot install platform: installing platform sduino:stm8@0.5-pre2: searching package root dir: no unique root dir in archive, found 'C:\Users\guill\AppData\Local\Arduino15\tmp\package-518500940\STM8S_StdPeriph_Driver' and 'C:\Users\guill\AppData\Local\Arduino15\tmp\package-518500940\cores'
+\end{lstlisting}
+
+Et sur les PC de l'école, malgré l'installation des drivers, Arduino ne détecte pas la carte dans la liste des ports disponibles
+
+\subsection{Essais avec STVD}
+Nous avons en parallèle repris le code d'un précédent TP, où nous devions implémenter la génération de signaux PWM :
+\begin{lstlisting}[language={[x86masm]Assembler}]
+stm8/
+    #include 'mapping.inc'
+    #include 'stm8s105c_s.inc'
+
+    segment 'rom'
+debut
+    bset PD_DDR,#3
+    bset PD_CR1,#3
+    bres PD_ODR,#3
+    mov TIM4_PSCR,#6
+    mov TIM4_ARR,#155
+    bset TIM4_IER,#0
+    bset TIM4_CR1,#0
+    rim
+    bset ADC_CR1,#0
+    mov ADC_CSR,#$00
+    bres ADC_CR2,#3
+
+boucle_infinie
+    jra boucle_infinie
+
+    interrupt Timer4_ISR
+Timer4_ISR
+    bres TIM4_SR,#0
+    bcpl PD_ODR,#3
+    bset ADC_CR1,#0
+attente_fin_conversion
+    btjf ADC_CSR,#7,attente_fin_conversion
+    bres ADC_CSR,#7
+    ld A,#1
+    or A,ADC_DRH
+    ld TIM4_ARR,A
+    iret
+
+    segment 'vectit'
+    dc.l {$82000000+debut}
+    segment at 8064 'vectit'
+    dc.l {$82000000+Timer4_ISR}
+
+    end
+\end{lstlisting}
+
+Le but de ce code est de réaliser les actions suivantes :
+\begin{itemize}
+\item Toutes les 10ms, une interruption se produit et déclenche la conversion ADC, et attend la fin de la conversion
+\item La valeur de la conversion est stockée dans le registre TIM4\_ARR, qui est utilisé pour définir la période du timer 4
+\end{itemize}
+En tant que tel, on peut ensuite utiliser un oscilloscope pour afficher la tension mesurée\\
+
+Nous n'avons pas eu le temps de réfléchir au code, et nous ne savons pas encore si nous préfèrerons le faire en assembleur ou en C
+
+\subsection{Conclusions pour cette séance}
+Si nous avons pu prendre en main la carte et réfléchir à l'implémentation du correcteur numériquement, les nombreux freins (problèmes logiciels, logiciels peu ergonomiques...) ont été un frein et nous n'avons pas eu le temps de faire beaucoup de choses. Il sera donc important de travailler entre les deux prochaines séances pour avancer, tant sur la partie analogique, que la partie numérique
+
+\pagebreak
 \section{Bibliographie}
 Liste des sites utilisés pour la réalisation du projet :
 \begin{itemize}
 \item \href{https://www.overleaf.com/learn}{Overleaf, guide d'utilisation du \LaTeX{}}
 \item \href{https://chat.openai.com/chat}{ChatGPT, modèle de langage automatisé}
 \item \href{https://ctan.mines-albi.fr/graphics/pgf/contrib/circuitikz/doc/circuitikzmanual.pdf}{Manuel de Circuitikz}
+\item \href{https://sciences-indus-cpge.papanicola.info/IMG/pdf/schemabloc.pdf}{Manuel des Schéma-blocs avec PGF/TIKZ}
 \end{itemize}
 
 \end{document}
