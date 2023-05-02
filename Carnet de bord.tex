@@ -472,6 +472,121 @@ Nous n'avons pas eu le temps de réfléchir au code, et nous ne savons pas encor
 \subsection{Conclusions pour cette séance}
 Si nous avons pu prendre en main la carte et réfléchir à l'implémentation du correcteur numériquement, les nombreux freins (problèmes logiciels, logiciels peu ergonomiques...) ont été un frein et nous n'avons pas eu le temps de faire beaucoup de choses. Il sera donc important de travailler entre les deux prochaines séances pour avancer, tant sur la partie analogique, que la partie numérique
 
+\section{Travail entre les séances 2 et 3}
+\subsection{Lecture d'une entrée analogique}
+Des recherches sur internet nous ont permis de trouver le tutoriel suivant : \href{https://circuitdigest.com/microcontroller-projects/adc-on-stm8s-using-c-compiler-reading-multiple-adc-values-and-displaying-on-lcd}{Tutoriel de CircuitDigest}. Le code fourni permet de lire des entrées analogiques et de les afficher sur un écran LCD. On adapte le code pour que la valeur soit renvoyée dans le moniteur série :
+
+\begin{lstlisting}[language=C]
+#include "STM8S.h"
+#include "stm8s103_adc.h"
+#include "stm8s_uart1.h"
+
+void UART1_Send_Char(char data)
+{
+    // Attendre que le buffer de transmission soit vide
+    while(!(UART1->SR & UART1_SR_TXE));
+    // Envoyer le caractere
+    UART1->DR = data;
+}
+
+void UART1_Send_String(char *str)
+{
+    while(*str)
+    {
+        UART1_Send_Char(*str);
+        str++;
+    }
+}
+
+void UART1_Print_Var(int var)
+{
+    char buffer[6];
+    sprintf(buffer, "%d", var);
+    UART1_Send_String(buffer);
+}
+
+void main()
+{
+    // Declarations de variables
+    unsigned int ADC_value_1 = 0;
+    int ADC_voltage_1 = 0;
+
+    CLK_PeripheralClockConfig(CLK_PERIPHERAL_ADC, ENABLE); // Activer l'horloge peripherique pour l'ADC
+    GPIO_Init (GPIOC, GPIO_PIN_4, GPIO_MODE_IN_FL_IT);
+    
+    // Configuration de l'UART
+    CLK_PeripheralClockConfig(CLK_PERIPHERAL_UART1, ENABLE);
+    UART1_DeInit();
+    UART1_Init((uint32_t)9600, UART1_WORDLENGTH_8D, UART1_STOPBITS_1, UART1_PARITY_NO, UART1_SYNCMODE_CLOCK_DISABLE, UART1_MODE_TX_ENABLE);
+
+    delay_ms(5000);
+
+    while (1)
+    {
+        ADC_value_1 = ADC_Read (AIN2);
+        ADC_voltage_1 = ADC_value_1 * (3.226); //(3300/1023 =~ 3.226)convert ADC value 1 to 0 to 3300mV
+
+        UART1_Send_String("D1: ");
+        UART1_Print_Var(ADC_value_1);
+        UART1_Send_String(" -> ");
+        UART1_Print_Var(ADC_voltage_1);
+        UART1_Send_String(" mV\r\n");
+
+        UART1_Send_String("\r\n");
+        delay_ms(500);
+    }
+}
+\end{lstlisting}
+
+\subsection{Génération d'un signal PWM}
+Des recherches sur internet nous ont permis de trouver le tutoriel suivant : \href{https://circuitdigest.com/microcontroller-projects/pulse-width-modulation-pwm-with-stm8-using-cosmic-c-and-stvd}{Tutoriel de CircuitDigest}. On en retire le code suivant :
+
+\begin{lstlisting}[language=C]
+#include "STM8S.h"
+
+void delay_ms(int ms) // Function Definition
+{
+    for (int i = 0; i <= ms; i++)
+        for (int j = 0; j < 120; j++) // Nop = Fosc/4
+            _asm("nop");              // Perform no operation //assembly code
+}
+
+void main(void)
+{
+    GPIO_DeInit(GPIOD);
+    TIM2_DeInit();
+    GPIO_Init(GPIOD, GPIO_PIN_4, GPIO_MODE_OUT_PP_HIGH_FAST);
+    TIM2_OC1Init(TIM2_OCMODE_PWM1, TIM2_OUTPUTSTATE_ENABLE, 1000, TIM2_OCPOLARITY_HIGH);
+    TIM2_TimeBaseInit(TIM2_PRESCALER_1, 500);
+    TIM2_Cmd(ENABLE);
+    while (TRUE)
+    {
+        signed int pwm_duty = 500;
+        TIM2_SetCompare1(pwm_duty);
+    }
+}
+\end{lstlisting}
+
+Dans la fonction main, les fonctions de configuration et d'initialisation suivantes sont appelées :
+\begin{itemize}
+\item \lstinline$GPIO_DeInit(GPIOD)$ : réinitialisation des paramètres du port D
+\item \lstinline$TIM2_DeInit()$ : réinitialisation du Timer 2
+\item \lstinline${GPIO_Init(GPIOD, GPIO_PIN_4, GPIO_MODE_OUT_PP_HIGH_FAST)$ : configuration de la broche PD4 en sortie push-pull avec une vitesse élevée
+\item \lstinline$TIM2_OC1Init(...)$ : configuration du Timer 2 pour générer un signal PWM en mode 1 avec un rapport cyclique initial de 1000 (50\%)
+\item \lstinline$TIM2_TimeBaseInit(TIM2_PRESCALER_1, 500)$ : configuration de la base de temps du Timer 2 avec un prédiviseur de 1 et une valeur d'autorechargement de 500
+\item \lstinline$TIM2_Cmd(ENABLE)$ : activation du Timer 2
+\end{itemize}
+
+Enfin, la partie :
+\begin{lstlisting}[language=C]
+while (TRUE)
+    {
+        signed int pwm_duty = 500;
+        TIM2_SetCompare1(pwm_duty);
+    }
+\end{lstlisting}
+Génère un signal PWM de rapport cyclique \lstinline$pwm_duty$/100
+
 \pagebreak
 \section{Bibliographie}
 Liste des sites utilisés pour la réalisation du projet :
