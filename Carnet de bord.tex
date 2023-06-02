@@ -338,6 +338,7 @@ On rentre donc le modèle suivant dans LTSPICE :
 \end{center}
 \caption{Schéma LTSPICE de l'amplificateur}
 \end{figure}
+\label{fig:Simulation ampli}
 \end{multicols}
 
 Et on obtient le résultat suivant :
@@ -661,7 +662,7 @@ void regulation_P() {
 
 \subsection{Partie électronique analogique}
 \subsubsection{Matériel utilisé}
-On utilise la bobine n°3\\
+On utilise la bobine n°5\\
 On utilise la boule "38" pesant $37.6g$ et mesurant $49.74mm$ de diamètre
 
 \subsubsection{Calcul du point de fonctionnement}
@@ -745,7 +746,7 @@ coordinates {(0.033,0.542)(0.0375,0.702)(0.0434,0.922)(0.0462,1.112)(0.0527,1.34
 
 \end{multicols}
 
-Au final, on choisit $I_0=1.8A$, ce qui nous donne $z_0=0.062m$
+Au final, on choisit $I_0=1.3A$, ce qui nous donne $z_0=5.1cm$
 
 \pagebreak
 \subsubsection{Résistance de la bobine}
@@ -799,6 +800,32 @@ On calcule donc que l'inductance de la bobine vaut $-\dfrac{R\cdot \tan \varphi}
 
 \subsection{Conclusions}
 Si nous avons peu avancé sur la partie numérique, nous avons pu caractériser la bobine, ce qui nous servira pour la suite dans la modélisation précise de notre système
+
+\section{Séance 4 - 02/06/2023}
+Lors de cette séance, nous nous sommes donnés l'objectif de réaliser l'ampli sur platine d'essai, afin de confirmer notre simulation
+
+\subsection{Choix des composants}
+\begin{itemize}
+\item Transistor : TIP122
+\item AOP : TL081
+\item Diode : 1N4007
+\end{itemize}
+
+\subsection{Réalisation}
+Nous avons réalisé le montage présenté dans la partie \ref{fig:Simulation ampli}. Pour le moment le meilleur résultat que nous ayons obtenu est le suivant :
+
+\begin{figure} [H]
+\begin{center}
+\includegraphics[width=1\textwidth]{Schémas/Mesure ampli TL.png} 
+\end{center}
+\caption{Mesure du montage amplificateur}
+\end{figure}
+
+On a en jaune la commande et en bleu la sortie. Au final, on sent bien que la bille est plus ou moins attirée, mais nous n'avons pas l'effet "on-off" que nous souhaitions obtenir.
+Un autre problème auquel nous avons été confronté est que le courant délivré par le montage est beaucoup trop faible : entre 0.1A et 0.4A alors qu'avec la distance qu'on avait mise pour tester le montage, la bille ne pouvait décoller qu'à partir d'environ 1,6A
+
+\subsection{Pistes pour la suite}
+Il semblerait que le TL081 ne soit pas adapté à notre montage. On essaiera à la prochaine séance d'utiliser un LM342 à la place
 
 \pagebreak
 \section{Bibliographie}

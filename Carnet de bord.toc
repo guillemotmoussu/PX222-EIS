@@ -40,4 +40,8 @@
 \contentsline {subsubsection}{\numberline {6.2.3}Résistance de la bobine}{17}{subsubsection.6.2.3}%
 \contentsline {subsubsection}{\numberline {6.2.4}Inductance de la bobine}{17}{subsubsection.6.2.4}%
 \contentsline {subsection}{\numberline {6.3}Conclusions}{18}{subsection.6.3}%
-\contentsline {section}{\numberline {7}Bibliographie}{19}{section.7}%
+\contentsline {section}{\numberline {7}Séance 4 - 02/06/2023}{18}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Choix des composants}{18}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Réalisation}{18}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Pistes pour la suite}{19}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Bibliographie}{20}{section.8}%

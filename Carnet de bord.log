@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.11)  3 MAY 2023 21:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.11)  2 JUN 2023 11:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1303,7 +1303,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout8 = `"Carnet de bord.lof"'.
 
  [2]
-<Schémas/Notes tableau séance 0.png, id=275, 1259.4553pt x 677.53125pt>
+<Schémas/Notes tableau séance 0.png, id=297, 1259.4553pt x 677.53125pt>
 File: Schémas/Notes tableau séance 0.png Graphic file (type png)
 <use Schémas/Notes tableau séance 0.png>
 Package pdftex.def Info: Schémas/Notes tableau séance 0.png  used on input li
@@ -1337,12 +1337,12 @@ s been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.137 O
        n obtient donc le bode suivant :]
-<Schémas/Bode initial.png, id=315, 843.15pt x 632.3625pt>
+<Schémas/Bode initial.png, id=337, 843.15pt x 632.3625pt>
 File: Schémas/Bode initial.png Graphic file (type png)
 <use Schémas/Bode initial.png>
 Package pdftex.def Info: Schémas/Bode initial.png  used on input line 140.
 (pdftex.def)             Requested size: 435.32422pt x 326.49532pt.
-<Schémas/Nyquist initial.png, id=316, 843.15pt x 632.3625pt>
+<Schémas/Nyquist initial.png, id=338, 843.15pt x 632.3625pt>
 File: Schémas/Nyquist initial.png Graphic file (type png)
 <use Schémas/Nyquist initial.png>
 Package pdftex.def Info: Schémas/Nyquist initial.png  used on input line 149.
@@ -1361,7 +1361,7 @@ s been already used, duplicate ignored
 l.183 \end{figure}
                    <./Schémas/Bode initial.png (PNG copy)> <./Schémas/Nyquist
  initial.png (PNG copy)>]
-<Schémas/Ampli.png, id=321, 449.42906pt x 420.06938pt>
+<Schémas/Ampli.png, id=343, 449.42906pt x 420.06938pt>
 File: Schémas/Ampli.png Graphic file (type png)
 <use Schémas/Ampli.png>
 Package pdftex.def Info: Schémas/Ampli.png  used on input line 218.
@@ -1385,7 +1385,7 @@ s been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.255 \end{figure}
                    <./Schémas/Ampli.png>]
-<Schémas/Correcteur PD.png, id=329, 330.48468pt x 284.56313pt>
+<Schémas/Correcteur PD.png, id=351, 330.48468pt x 284.56313pt>
 File: Schémas/Correcteur PD.png Graphic file (type png)
 <use Schémas/Correcteur PD.png>
 Package pdftex.def Info: Schémas/Correcteur PD.png  used on input line 261.
@@ -1409,7 +1409,7 @@ as been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.294 
        <./Schémas/Correcteur PD.png>]
-<Schémas/Modèle complet PD.png, id=336, 1818.795pt x 670.00313pt>
+<Schémas/Modèle complet PD.png, id=358, 1818.795pt x 670.00313pt>
 File: Schémas/Modèle complet PD.png Graphic file (type png)
 <use Schémas/Modèle complet PD.png>
 Package pdftex.def Info: Schémas/Modèle complet PD.png  used on input line 29
@@ -1443,7 +1443,7 @@ as been already used, duplicate ignored
 l.326 O
        n veut donc simuler notre bloc amplificateur. Dans l'idéal on devrai...
  <./Schémas/Modèle complet PD.png>]
-<Schémas/sim matlab ampli.png, id=359, 843.15pt x 632.3625pt>
+<Schémas/sim matlab ampli.png, id=381, 843.15pt x 632.3625pt>
 File: Schémas/sim matlab ampli.png Graphic file (type png)
 <use Schémas/sim matlab ampli.png>
 Package pdftex.def Info: Schémas/sim matlab ampli.png  used on input line 329.
@@ -1454,7 +1454,7 @@ Overfull \hbox (5.0pt too wide) in paragraph at lines 329--330
  [] 
  []
 
-<Schémas/ltspice ampli.png, id=360, 702.37407pt x 532.23843pt>
+<Schémas/ltspice ampli.png, id=382, 702.37407pt x 532.23843pt>
 File: Schémas/ltspice ampli.png Graphic file (type png)
 <use Schémas/ltspice ampli.png>
 Package pdftex.def Info: Schémas/ltspice ampli.png  used on input line 337.
@@ -1464,38 +1464,38 @@ Overfull \hbox (5.0pt too wide) in paragraph at lines 337--338
  [] 
  []
 
-<Schémas/sim ampli.png, id=361, 1111.90407pt x 276.28218pt>
+<Schémas/sim ampli.png, id=383, 1111.90407pt x 276.28218pt>
 File: Schémas/sim ampli.png Graphic file (type png)
 <use Schémas/sim ampli.png>
-Package pdftex.def Info: Schémas/sim ampli.png  used on input line 346.
+Package pdftex.def Info: Schémas/sim ampli.png  used on input line 347.
 (pdftex.def)             Requested size: 483.69687pt x 120.1902pt.
 [9
 pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.361 \section
+l.362 \section
               {Séance 2 - 18/04/2023}
 pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.361 \section
+l.362 \section
               {Séance 2 - 18/04/2023}
 pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.361 \section
+l.362 \section
               {Séance 2 - 18/04/2023} <./Schémas/sim matlab ampli.png (PNG co
 py)> <./Schémas/ltspice ampli.png> <./Schémas/sim ampli.png>]
-<Schémas/Brochage STM8.jpg, id=368, 3276.24pt x 2457.18pt>
+<Schémas/Brochage STM8.jpg, id=390, 3276.24pt x 2457.18pt>
 File: Schémas/Brochage STM8.jpg Graphic file (type jpg)
 <use Schémas/Brochage STM8.jpg>
-Package pdftex.def Info: Schémas/Brochage STM8.jpg  used on input line 396.
+Package pdftex.def Info: Schémas/Brochage STM8.jpg  used on input line 397.
 (pdftex.def)             Requested size: 290.22107pt x 217.64977pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 408--409
+Underfull \hbox (badness 10000) in paragraph at lines 409--410
 
  []
 
@@ -1504,13 +1504,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.409 
+l.410 
       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.409 
+l.410 
        <./Schémas/Brochage STM8.jpg>]
 (C:\Users\guill\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
@@ -1522,7 +1522,7 @@ File: lstlang2.sty 2023/02/27 1.9 listings language file
 File: lstlang3.sty 2023/02/27 1.9 listings language file
 )
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 469--470
+Underfull \hbox (badness 10000) in paragraph at lines 470--471
 
  []
 
@@ -1533,32 +1533,32 @@ File: lstlang1.sty 2023/02/27 1.9 listings language file
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
 )
 [12] [13] [14] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 684--685
+Underfull \hbox (badness 10000) in paragraph at lines 685--686
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 687--713
+Underfull \hbox (badness 10000) in paragraph at lines 688--714
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 687--713
+Underfull \hbox (badness 10000) in paragraph at lines 688--714
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--715
+Underfull \hbox (badness 10000) in paragraph at lines 715--716
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 716--717
+Underfull \hbox (badness 10000) in paragraph at lines 717--718
 
  []
 
 
-Overfull \hbox (4.25395pt too wide) in paragraph at lines 741--742
+Overfull \hbox (4.25395pt too wide) in paragraph at lines 742--743
  [] 
  []
 
@@ -1567,49 +1567,62 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.17}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.751 \subsubsection
+l.752 \subsubsection
                     {Résistance de la bobine}
 pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.751 \subsubsection
+l.752 \subsubsection
                     {Résistance de la bobine}]
 \absfshift=\dimen346
-<Schémas/Mesure inductance bobine.png, id=586, 602.25pt x 361.35pt>
+<Schémas/Mesure inductance bobine.png, id=608, 602.25pt x 361.35pt>
 File: Schémas/Mesure inductance bobine.png Graphic file (type png)
 <use Schémas/Mesure inductance bobine.png>
 Package pdftex.def Info: Schémas/Mesure inductance bobine.png  used on input l
-ine 793.
+ine 794.
 (pdftex.def)             Requested size: 241.84843pt x 145.11087pt.
  [17
 pdfTeX warning (ext4): destination with the same identifier (name{figure.19}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.800 \subsection
+l.801 \subsection
                  {Conclusions}
 pdfTeX warning (ext4): destination with the same identifier (name{figure.20}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.800 \subsection
+l.801 \subsection
                  {Conclusions}
 pdfTeX warning (ext4): destination with the same identifier (name{figure.21}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.800 \subsection
+l.801 \subsection
                  {Conclusions} <./Schémas/Mesure inductance bobine.png>]
-[18] [19] (Carnet de bord.aux)
+<Schémas/Mesure ampli TL.png, id=615, 1057.70157pt x 633.86812pt>
+File: Schémas/Mesure ampli TL.png Graphic file (type png)
+<use Schémas/Mesure ampli TL.png>
+Package pdftex.def Info: Schémas/Mesure ampli TL.png  used on input line 819.
+(pdftex.def)             Requested size: 483.69687pt x 289.87093pt.
+
+[18
+pdfTeX warning (ext4): destination with the same identifier (name{figure.22}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.831 \section
+              {Bibliographie} <./Schémas/Mesure ampli TL.png>] [19] [20]
+(Carnet de bord.aux)
 Package rerunfilecheck Info: File `"Carnet de bord".out' has not changed.
-(rerunfilecheck)             Checksum: 9ED783FF61F07456C62B890236FC7692;8440.
+(rerunfilecheck)             Checksum: 6C6C9DDB134F33F85EEF951B01E75FC1;9048.
  ) 
 Here is how much of TeX's memory you used:
- 61280 strings out of 476326
- 1557903 string characters out of 5787722
- 2443416 words of memory out of 5000000
- 80695 multiletter control sequences out of 15000+600000
+ 61298 strings out of 476326
+ 1558271 string characters out of 5787722
+ 2443472 words of memory out of 5000000
+ 80706 multiletter control sequences out of 15000+600000
  533802 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,20n,89p,736b,2393s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1638,9 +1651,9 @@ al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/guill/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/
 guill/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pf
 b>
-Output written on "Carnet de bord.pdf" (19 pages, 3323568 bytes).
+Output written on "Carnet de bord.pdf" (20 pages, 4303319 bytes).
 PDF statistics:
- 1150 PDF objects out of 1200 (max. 8388607)
- 274 named destinations out of 1000 (max. 500000)
- 404 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1180 PDF objects out of 1200 (max. 8388607)
+ 280 named destinations out of 1000 (max. 500000)
+ 441 words of extra memory for PDF output out of 10000 (max. 10000000)
 
