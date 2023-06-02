@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.11)  3 MAY 2023 01:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.11)  3 MAY 2023 21:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1179,26 +1179,26 @@ File: l3backend-pdftex.def 2023-03-30 L3 backend support: PDF output (pdfTeX)
 ) (Carnet de bord.aux)
 \openout1 = `"Carnet de bord.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Info: Redefining \degres on input line 50.
-LaTeX Info: Redefining \up on input line 50.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Info: Redefining \degres on input line 51.
+LaTeX Info: Redefining \up on input line 51.
 
 (C:\Users\guill\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
@@ -1259,7 +1259,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 50.
+Package hyperref Info: Link coloring OFF on input line 51.
 (Carnet de bord.out) (Carnet de bord.out)
 \@outlinefile=\write6
 \openout6 = `"Carnet de bord.out"'.
@@ -1269,7 +1269,7 @@ Package hyperref Info: Link coloring OFF on input line 50.
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into 
 your preamble.
- on input line 50.
+ on input line 51.
 
 
 (C:\Users\guill\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\tran
@@ -1278,45 +1278,45 @@ File: translations-basic-dictionary-french.trsl (french translation file `trans
 lations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `french'. on input line 50.
+or `french'. on input line 51.
 \c@lstlisting=\count369
-LaTeX Font Info:    Trying to load font information for U+msa on input line 52.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 53.
 
 
 (C:\Users\guill\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 52.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 53.
 
 
 (C:\Users\guill\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-(Carnet de bord.toc)
+(Carnet de bord.toc [1
+
+{C:/Users/guill/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}])
 \tf@toc=\write7
 \openout7 = `"Carnet de bord.toc"'.
 
- (Carnet de bord.lof [1
-
-{C:/Users/guill/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}])
+ (Carnet de bord.lof)
 \tf@lof=\write8
 \openout8 = `"Carnet de bord.lof"'.
 
  [2]
-<Schémas/Notes tableau séance 0.png, id=195, 1259.4553pt x 677.53125pt>
+<Schémas/Notes tableau séance 0.png, id=275, 1259.4553pt x 677.53125pt>
 File: Schémas/Notes tableau séance 0.png Graphic file (type png)
 <use Schémas/Notes tableau séance 0.png>
 Package pdftex.def Info: Schémas/Notes tableau séance 0.png  used on input li
-ne 60.
+ne 61.
 (pdftex.def)             Requested size: 435.32422pt x 234.18274pt.
  [3
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.82 \section
+l.83 \section
              {Séance 1 - 05/04/2023} <./Schémas/Notes tableau séance 0.png>]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 91.
+LaTeX Font Info:    Trying to load font information for U+euf on input line 92.
 
 (C:\Users\guill\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
@@ -1325,7 +1325,7 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-13.
+14.
 
 (C:\Users\guill\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
@@ -1335,103 +1335,103 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.136 O
+l.137 O
        n obtient donc le bode suivant :]
-<Schémas/Bode initial.png, id=235, 843.15pt x 632.3625pt>
+<Schémas/Bode initial.png, id=315, 843.15pt x 632.3625pt>
 File: Schémas/Bode initial.png Graphic file (type png)
 <use Schémas/Bode initial.png>
-Package pdftex.def Info: Schémas/Bode initial.png  used on input line 139.
+Package pdftex.def Info: Schémas/Bode initial.png  used on input line 140.
 (pdftex.def)             Requested size: 435.32422pt x 326.49532pt.
-<Schémas/Nyquist initial.png, id=236, 843.15pt x 632.3625pt>
+<Schémas/Nyquist initial.png, id=316, 843.15pt x 632.3625pt>
 File: Schémas/Nyquist initial.png Graphic file (type png)
 <use Schémas/Nyquist initial.png>
-Package pdftex.def Info: Schémas/Nyquist initial.png  used on input line 148.
+Package pdftex.def Info: Schémas/Nyquist initial.png  used on input line 149.
 (pdftex.def)             Requested size: 290.22107pt x 217.66354pt.
  [5
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.182 \end{figure}
+l.183 \end{figure}
                   
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.182 \end{figure}
+l.183 \end{figure}
                    <./Schémas/Bode initial.png (PNG copy)> <./Schémas/Nyquist
  initial.png (PNG copy)>]
-<Schémas/Ampli.png, id=241, 449.42906pt x 420.06938pt>
+<Schémas/Ampli.png, id=321, 449.42906pt x 420.06938pt>
 File: Schémas/Ampli.png Graphic file (type png)
 <use Schémas/Ampli.png>
-Package pdftex.def Info: Schémas/Ampli.png  used on input line 217.
+Package pdftex.def Info: Schémas/Ampli.png  used on input line 218.
 (pdftex.def)             Requested size: 290.22107pt x 271.27278pt.
  [6
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.254 \end{figure}
+l.255 \end{figure}
                   
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.254 \end{figure}
+l.255 \end{figure}
                   
 pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.254 \end{figure}
+l.255 \end{figure}
                    <./Schémas/Ampli.png>]
-<Schémas/Correcteur PD.png, id=249, 330.48468pt x 284.56313pt>
+<Schémas/Correcteur PD.png, id=329, 330.48468pt x 284.56313pt>
 File: Schémas/Correcteur PD.png Graphic file (type png)
 <use Schémas/Correcteur PD.png>
-Package pdftex.def Info: Schémas/Correcteur PD.png  used on input line 260.
+Package pdftex.def Info: Schémas/Correcteur PD.png  used on input line 261.
 (pdftex.def)             Requested size: 241.84843pt x 208.2504pt.
  [7
 pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.293 
+l.294 
       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.293 
+l.294 
       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.293 
+l.294 
        <./Schémas/Correcteur PD.png>]
-<Schémas/Modèle complet PD.png, id=256, 1818.795pt x 670.00313pt>
+<Schémas/Modèle complet PD.png, id=336, 1818.795pt x 670.00313pt>
 File: Schémas/Modèle complet PD.png Graphic file (type png)
 <use Schémas/Modèle complet PD.png>
 Package pdftex.def Info: Schémas/Modèle complet PD.png  used on input line 29
-6.
+7.
 (pdftex.def)             Requested size: 483.69687pt x 178.18384pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 310--311
+Underfull \hbox (badness 10000) in paragraph at lines 311--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 315--316
+Underfull \hbox (badness 10000) in paragraph at lines 316--317
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 317--318
+Underfull \hbox (badness 10000) in paragraph at lines 318--319
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 319--320
+Underfull \hbox (badness 10000) in paragraph at lines 320--321
 
  []
 
@@ -1440,62 +1440,62 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.325 O
+l.326 O
        n veut donc simuler notre bloc amplificateur. Dans l'idéal on devrai...
  <./Schémas/Modèle complet PD.png>]
-<Schémas/sim matlab ampli.png, id=279, 843.15pt x 632.3625pt>
+<Schémas/sim matlab ampli.png, id=359, 843.15pt x 632.3625pt>
 File: Schémas/sim matlab ampli.png Graphic file (type png)
 <use Schémas/sim matlab ampli.png>
-Package pdftex.def Info: Schémas/sim matlab ampli.png  used on input line 328.
+Package pdftex.def Info: Schémas/sim matlab ampli.png  used on input line 329.
 
 (pdftex.def)             Requested size: 241.84843pt x 181.38307pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 328--329
+Overfull \hbox (5.0pt too wide) in paragraph at lines 329--330
  [] 
  []
 
-<Schémas/ltspice ampli.png, id=280, 702.37407pt x 532.23843pt>
+<Schémas/ltspice ampli.png, id=360, 702.37407pt x 532.23843pt>
 File: Schémas/ltspice ampli.png Graphic file (type png)
 <use Schémas/ltspice ampli.png>
-Package pdftex.def Info: Schémas/ltspice ampli.png  used on input line 336.
+Package pdftex.def Info: Schémas/ltspice ampli.png  used on input line 337.
 (pdftex.def)             Requested size: 241.84843pt x 183.2651pt.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 336--337
+Overfull \hbox (5.0pt too wide) in paragraph at lines 337--338
  [] 
  []
 
-<Schémas/sim ampli.png, id=281, 1111.90407pt x 276.28218pt>
+<Schémas/sim ampli.png, id=361, 1111.90407pt x 276.28218pt>
 File: Schémas/sim ampli.png Graphic file (type png)
 <use Schémas/sim ampli.png>
-Package pdftex.def Info: Schémas/sim ampli.png  used on input line 345.
+Package pdftex.def Info: Schémas/sim ampli.png  used on input line 346.
 (pdftex.def)             Requested size: 483.69687pt x 120.1902pt.
 [9
 pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.360 \section
+l.361 \section
               {Séance 2 - 18/04/2023}
 pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.360 \section
+l.361 \section
               {Séance 2 - 18/04/2023}
 pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.360 \section
+l.361 \section
               {Séance 2 - 18/04/2023} <./Schémas/sim matlab ampli.png (PNG co
 py)> <./Schémas/ltspice ampli.png> <./Schémas/sim ampli.png>]
-<Schémas/Brochage STM8.jpg, id=288, 3276.24pt x 2457.18pt>
+<Schémas/Brochage STM8.jpg, id=368, 3276.24pt x 2457.18pt>
 File: Schémas/Brochage STM8.jpg Graphic file (type jpg)
 <use Schémas/Brochage STM8.jpg>
-Package pdftex.def Info: Schémas/Brochage STM8.jpg  used on input line 395.
+Package pdftex.def Info: Schémas/Brochage STM8.jpg  used on input line 396.
 (pdftex.def)             Requested size: 290.22107pt x 217.64977pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 407--408
+Underfull \hbox (badness 10000) in paragraph at lines 408--409
 
  []
 
@@ -1504,13 +1504,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.408 
+l.409 
       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.408 
+l.409 
        <./Schémas/Brochage STM8.jpg>]
 (C:\Users\guill\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
@@ -1522,7 +1522,7 @@ File: lstlang2.sty 2023/02/27 1.9 listings language file
 File: lstlang3.sty 2023/02/27 1.9 listings language file
 )
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 468--469
+Underfull \hbox (badness 10000) in paragraph at lines 469--470
 
  []
 
@@ -1532,43 +1532,115 @@ File: lstlang1.sty 2023/02/27 1.9 listings language file
 (C:\Users\guill\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
 )
-[12] [13] [14] [15] (Carnet de bord.aux)
+[12] [13] [14] [15]
+Underfull \hbox (badness 10000) in paragraph at lines 684--685
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 687--713
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 687--713
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 714--715
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 716--717
+
+ []
+
+
+Overfull \hbox (4.25395pt too wide) in paragraph at lines 741--742
+ [] 
+ []
+
+[16
+pdfTeX warning (ext4): destination with the same identifier (name{figure.17}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.751 \subsubsection
+                    {Résistance de la bobine}
+pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.751 \subsubsection
+                    {Résistance de la bobine}]
+\absfshift=\dimen346
+<Schémas/Mesure inductance bobine.png, id=586, 602.25pt x 361.35pt>
+File: Schémas/Mesure inductance bobine.png Graphic file (type png)
+<use Schémas/Mesure inductance bobine.png>
+Package pdftex.def Info: Schémas/Mesure inductance bobine.png  used on input l
+ine 793.
+(pdftex.def)             Requested size: 241.84843pt x 145.11087pt.
+ [17
+pdfTeX warning (ext4): destination with the same identifier (name{figure.19}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.800 \subsection
+                 {Conclusions}
+pdfTeX warning (ext4): destination with the same identifier (name{figure.20}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.800 \subsection
+                 {Conclusions}
+pdfTeX warning (ext4): destination with the same identifier (name{figure.21}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.800 \subsection
+                 {Conclusions} <./Schémas/Mesure inductance bobine.png>]
+[18] [19] (Carnet de bord.aux)
 Package rerunfilecheck Info: File `"Carnet de bord".out' has not changed.
-(rerunfilecheck)             Checksum: 61308FA48A1527B6F1C22E5ED7F50B1E;5865.
+(rerunfilecheck)             Checksum: 9ED783FF61F07456C62B890236FC7692;8440.
  ) 
 Here is how much of TeX's memory you used:
- 60223 strings out of 476326
- 1527660 string characters out of 5787722
- 2411288 words of memory out of 5000000
- 79698 multiletter control sequences out of 15000+600000
- 533461 words of font info for 91 fonts, out of 8000000 for 9000
+ 61280 strings out of 476326
+ 1557903 string characters out of 5787722
+ 2443416 words of memory out of 5000000
+ 80695 multiletter control sequences out of 15000+600000
+ 533802 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,9n,89p,736b,2537s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm
-0800.pk> <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\ecti1095.pk> <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\ectt1000.pk> <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\ecrm0600.pk> <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/ljfour
-/jknappen/ec/dpi600\eccc1095.pk> <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\guill\AppData\Local\MiKTeX\fon
-ts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\guill\AppData\Local\MiKT
-eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\guill\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\guill\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\guill\
-AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\
-guill\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk><C:/U
-sers/guill/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10
-.pfb><C:/Users/guill/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmbx10.pfb><C:/Users/guill/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmmi10.pfb><C:/Users/guill/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmmi8.pfb><C:/Users/guill/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/guill/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/guill/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/guill/AppData/
-Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb>
-Output written on "Carnet de bord.pdf" (15 pages, 2277817 bytes).
+ 84i,20n,89p,736b,2393s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
+1095.pk> <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
+0\ecrm0800.pk> <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\ecti1095.pk> <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
+pen/ec/dpi600\ectt1000.pk> <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/ljfour
+/jknappen/ec/dpi600\ecrm0600.pk> <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi600\eccc1095.pk> <C:\Users\guill\AppData\Local\MiKTeX\fon
+ts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\guill\AppData\Local\MiKT
+eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\guill\AppData\Loca
+l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\guill\AppDat
+a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\guill\
+AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\
+guill\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\
+Users\guill\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk
+><C:/Users/guill/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+mbsy10.pfb><C:/Users/guill/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmbx10.pfb><C:/Users/guill/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmmi10.pfb><C:/Users/guill/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/guill/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/guill/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/guill/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/guill/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/
+guill/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pf
+b>
+Output written on "Carnet de bord.pdf" (19 pages, 3323568 bytes).
 PDF statistics:
- 956 PDF objects out of 1000 (max. 8388607)
- 216 named destinations out of 1000 (max. 500000)
- 287 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1150 PDF objects out of 1200 (max. 8388607)
+ 274 named destinations out of 1000 (max. 500000)
+ 404 words of extra memory for PDF output out of 10000 (max. 10000000)
 

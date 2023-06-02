@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.c": "c",
+        "ADC.C": "cpp",
+        "ADC_serial.C": "cpp"
+    }
+}

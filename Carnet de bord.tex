@@ -21,6 +21,7 @@
 \usepackage{ulem}
 \usepackage{listings}
 \usepackage{schemabloc}
+\usepackage{multicol}
 \setlength{\parindent}{0pt}
 
 \title{PROJET EIS - PX222}
@@ -474,36 +475,12 @@ Si nous avons pu prendre en main la carte et réfléchir à l'implémentation du
 
 \section{Travail entre les séances 2 et 3}
 \subsection{Lecture d'une entrée analogique}
-Des recherches sur internet nous ont permis de trouver le tutoriel suivant : \href{https://circuitdigest.com/microcontroller-projects/adc-on-stm8s-using-c-compiler-reading-multiple-adc-values-and-displaying-on-lcd}{Tutoriel de CircuitDigest}. Le code fourni permet de lire des entrées analogiques et de les afficher sur un écran LCD. On adapte le code pour que la valeur soit renvoyée dans le moniteur série :
+Des recherches sur internet nous ont permis de trouver les tutoriels suivants : \href{https://circuitdigest.com/microcontroller-projects/adc-on-stm8s-using-c-compiler-reading-multiple-adc-values-and-displaying-on-lcd}{Tutoriel de CircuitDigest pour ADC} et \href{https://circuitdigest.com/microcontroller-projects/serial-monitor-on-stm8s-using-cosmic-and-stvd}{Tutoriel de CircuitDigest pour la lecture série}. On utilise le code de ces deux tutoriels pour produire le programme suivant :
 
 \begin{lstlisting}[language=C]
 #include "STM8S.h"
 #include "stm8s103_adc.h"
-#include "stm8s_uart1.h"
-
-void UART1_Send_Char(char data)
-{
-    // Attendre que le buffer de transmission soit vide
-    while(!(UART1->SR & UART1_SR_TXE));
-    // Envoyer le caractere
-    UART1->DR = data;
-}
-
-void UART1_Send_String(char *str)
-{
-    while(*str)
-    {
-        UART1_Send_Char(*str);
-        str++;
-    }
-}
-
-void UART1_Print_Var(int var)
-{
-    char buffer[6];
-    sprintf(buffer, "%d", var);
-    UART1_Send_String(buffer);
-}
+#include "stm8s103_serial.h"
 
 void main()
 {
@@ -512,43 +489,50 @@ void main()
     int ADC_voltage_1 = 0;
 
     CLK_PeripheralClockConfig(CLK_PERIPHERAL_ADC, ENABLE); // Activer l'horloge peripherique pour l'ADC
-    GPIO_Init (GPIOC, GPIO_PIN_4, GPIO_MODE_IN_FL_IT);
-    
-    // Configuration de l'UART
-    CLK_PeripheralClockConfig(CLK_PERIPHERAL_UART1, ENABLE);
-    UART1_DeInit();
-    UART1_Init((uint32_t)9600, UART1_WORDLENGTH_8D, UART1_STOPBITS_1, UART1_PARITY_NO, UART1_SYNCMODE_CLOCK_DISABLE, UART1_MODE_TX_ENABLE);
+    GPIO_Init(GPIOB, GPIO_PIN_0, GPIO_MODE_IN_FL_IT);      // Initialiser le pin PB0 en entree
 
+    Serial_begin(9600);
+    Serial_print_string("Bonjour !");
+    Serial_newline();
     delay_ms(5000);
 
     while (1)
     {
-        ADC_value_1 = ADC_Read (AIN2);
-        ADC_voltage_1 = ADC_value_1 * (3.226); //(3300/1023 =~ 3.226)convert ADC value 1 to 0 to 3300mV
-
-        UART1_Send_String("D1: ");
-        UART1_Print_Var(ADC_value_1);
-        UART1_Send_String(" -> ");
-        UART1_Print_Var(ADC_voltage_1);
-        UART1_Send_String(" mV\r\n");
-
-        UART1_Send_String("\r\n");
+        ADC_value_1 = ADC_Read(AIN2);
+        ADC_voltage_1 = ADC_value_1 * (2.933); //(3000/1023 =~ 2.933) 
+        Serial_print_string("B0: ");
+        Serial_print_string(ADC_value_1);
+        Serial_print_string(" -> ");
+        Serial_print_string(ADC_voltage_1);
+        Serial_print_string(" mV");
+        Serial_newline();
         delay_ms(500);
     }
 }
 \end{lstlisting}
 
+On aura donc à priori besoin des fichiers suivants :
+\begin{itemize}
+\item \href{https://github.com/CircuitDigest/STM8S103F3_SPL}{Fichiers de base} 
+\item \href{https://github.com/CircuitDigest/STM8S103F3_SPL/blob/master/stm8s103%20Libraries/stm8s103_Serial.h}{Fichier Serial.h}
+\item \href{https://github.com/CircuitDigest/STM8S103F3_SPL/blob/master/inc/stm8s103_ADC.h}{Fichier ADC.h}
+\end{itemize}
+
 \subsection{Génération d'un signal PWM}
+\subsubsection{Code}
 Des recherches sur internet nous ont permis de trouver le tutoriel suivant : \href{https://circuitdigest.com/microcontroller-projects/pulse-width-modulation-pwm-with-stm8-using-cosmic-c-and-stvd}{Tutoriel de CircuitDigest}. On en retire le code suivant :
 
 \begin{lstlisting}[language=C]
 #include "STM8S.h"
 
-void delay_ms(int ms) // Function Definition
+void delay_ms(int ms)
 {
-    for (int i = 0; i <= ms; i++)
-        for (int j = 0; j < 120; j++) // Nop = Fosc/4
-            _asm("nop");              // Perform no operation //assembly code
+	int i;
+	int j;
+    for (i = 0; i <= ms; i++)
+    	{
+        for (j = 0; j < 120; j++) {_asm("nop");}
+    }
 }
 
 void main(void)
@@ -567,6 +551,7 @@ void main(void)
 }
 \end{lstlisting}
 
+\subsubsection{Description du code}
 Dans la fonction main, les fonctions de configuration et d'initialisation suivantes sont appelées :
 \begin{itemize}
 \item \lstinline$GPIO_DeInit(GPIOD)$ : réinitialisation des paramètres du port D
@@ -576,7 +561,7 @@ Dans la fonction main, les fonctions de configuration et d'initialisation suivan
 \item \lstinline$TIM2_TimeBaseInit(TIM2_PRESCALER_1, 500)$ : configuration de la base de temps du Timer 2 avec un prédiviseur de 1 et une valeur d'autorechargement de 500
 \item \lstinline$TIM2_Cmd(ENABLE)$ : activation du Timer 2
 \end{itemize}
-
+\pagebreak
 Enfin, la partie :
 \begin{lstlisting}[language=C]
 while (TRUE)
@@ -585,7 +570,235 @@ while (TRUE)
         TIM2_SetCompare1(pwm_duty);
     }
 \end{lstlisting}
-Génère un signal PWM de rapport cyclique \lstinline$pwm_duty$/100
+Génère un signal PWM de rapport cyclique (\lstinline$pwm_duty$/10)\%
+
+\subsubsection{Fichiers nécessaires}
+Comme précedemment, on aura besoin des fichiers des \href{https://github.com/CircuitDigest/STM8S103F3_SPL}{Fichiers de base}
+
+\section{Séance 3 - 03/05/2023}
+\subsection{Partie électronique numérique}
+\subsubsection{Récupération d'une entrée}
+Nous auront donc un capteur renvoyant des valeurs entre $0V$ et $3V$, correspondant à la distance avec la bille, dont il faudra récupérer les valeurs à l'aide d'un port analogique du STM8. Nous souhaitions récupérer les valeurs et les renvoyer vers un port série. Cependant, malgré l'installation de drivers et des bibliothèques nécessaires, que ce soit avec le moniteur Arduino ou avec Putty, nous n'avons pas réussi à récupérer les valeurs renvoyées par la carte. Le code que nous avions écrit plus haut compile cependant, et la carte arrive à l'exécuter. Nous pourrons vérifier son fonctionnement lorsque nous auront réussi à générer des signaux PWM.
+
+\subsubsection{Génération de signaux PWM}
+Nous avons donc tenté de générer des signaux PWM en utilisant notre code. Lorsque le programme est exécuté, on constate bien une tension entre PD4 et la masse, mais cette tension est constante. Nous avons tenté de nombreuses modifications sans succès. Nous avons donc voulu essayer des exemples présents en ligne, afin d'au moins se faire une idée sur la faisabilité de la génération de ces signaux.\\
+\medskip
+Voici une liste des sites que nous avons utilisé, ainsi que le résultat que nous avons pu obtenir au final :
+\begin{itemize}
+\item \href{https://www.st.com/en/embedded-software/stsw-stm8036.html}{Site de ST Microelectronics} : ne contient pas un programme complet, ne compile pas, pas de résultats concluants
+\item \href{https://circuitdigest.com/microcontroller-projects/pulse-width-modulation-pwm-with-stm8-using-cosmic-c-and-stvd}{Site de CircuitDigest} : code dont nous nous étions inspiré, génère une tension positive constante mais pas de PWM
+\item \href{https://blog.mark-stevens.co.uk/2012/08/generating-pwm-signals-using-the-stm8s/}{Site de Mark-Stevens} : ne contient pas les fichiers nécessaire à la compilation, pas de résultats concluants
+\item \href{https://embedded-lab.com/blog/starting-stm8-microcontrollers/20/}{Site d'Embedded lab} : compile avec quelques modifications, mais pas de tension en sortie des ports de la carte
+\item \href{https://gist.github.com/stecman/f748abea0332be1e41640fd25b5ca861}{Github de stecman} : nous n'avons pas eu le temps de regarder, mais semble intéressant
+\end{itemize}
+Au final nous n'avons pas encore de résultats. Il faudra par la suite soit trouver pourquoi nous n'arrivons pas à générer ces signaux avec un programme en C, soit essayer en assembleur. Le problème de l'assembleur est qu'il sera probablement plus difficile d'implémenter nos calculs de PID.
+
+\subsubsection{Brouillon pour un régulateur P}
+En parallèle, nous avons commencé à réfléchir à un programme permettant de récupérer l'entrée, d'appliquer un calcul (ici $Kp=1$), et de produire une sortie avec un signal PWM. Ce code n'a pas encore été testé.
+
+\pagebreak
+\begin{lstlisting}[language = C]
+#include "stm8s.h"
+#include "stm8s_adc1.h"
+#include "stm8s_tim1.h"
+
+// Parametre du regulateur proportionnel
+#define KP 1.0
+
+// Variables globales
+volatile uint16_t consigne = 0;
+volatile uint16_t adc_value = 0;
+
+void main(void) {
+    // Initialisation des peripheriques (ADC, TIM1, etc.)
+    System_Init();
+
+    while (1) {
+        adc_value = ADC1_GetConversionValue(); // Lecture de la valeur ADC
+        regulation_P(); // Appel de la fonction de regulation proportionnelle
+    }
+}
+
+void System_Init() {
+    // Configuration ADC
+    ADC1_Init(ADC1_CONVERSIONMODE_SINGLE, ADC1_CHANNEL_0, ADC1_PRESSEL_FCPU_D2, ADC1_EXTTRIG_TIM, DISABLE, ADC1_ALIGN_RIGHT, ADC1_SCHMITTTRIG_CHANNEL0, DISABLE);
+    ADC1_StartConversion();
+
+    // Configuration TIM1 pour PWM
+    TIM1_TimeBaseInit(0xFFFF, TIM1_COUNTERMODE_UP, 0, 0);
+    TIM1_OC1Init(TIM1_OCMODE_PWM1, TIM1_OUTPUTSTATE_ENABLE, 0, TIM1_OCPOLARITY_HIGH);
+    TIM1_Cmd(ENABLE);
+    TIM1_CtrlPWMOutputs(ENABLE);
+
+    // Configuration du GPIO pour la sortie PWM
+    GPIO_Init(GPIOB, GPIO_PIN_0, GPIO_MODE_OUT_PP_HIGH_FAST);
+
+    // Configuration du GPIO pour l'entree analogique (ADC)
+    GPIO_Init(GPIOA, GPIO_PIN_0, GPIO_MODE_IN_FL_NO_IT);
+}
+
+// Fonction de mise a jour de la consigne
+void set_consigne(uint16_t value) {
+    consigne = value;
+}
+
+// Fonction de regulation proportionnelle
+void regulation_P() {
+    float erreur = (float)consigne - (float)adc_value;
+    float sortie = KP * erreur;
+
+    // Limiter la sortie entre 0 et la valeur maximale du compteur (ici 0xFFFF)
+    if (sortie < 0) {
+        sortie = 0;
+    } else if (sortie > 0xFFFF) {
+        sortie = 0xFFFF;
+    }
+
+    // Mise a jour de la sortie PWM
+    TIM1_SetCompare1((uint16_t)sortie);
+}
+\end{lstlisting}
+
+\subsection{Partie électronique analogique}
+\subsubsection{Matériel utilisé}
+On utilise la bobine n°3\\
+On utilise la boule "38" pesant $37.6g$ et mesurant $49.74mm$ de diamètre
+
+\subsubsection{Calcul du point de fonctionnement}
+On commence par relier la bobine à l'alim :
+\begin{figure}[H]
+\centering
+\begin{circuitikz}
+\draw
+(0,0)
+to[V, l=$28\text{V}$] (0,3)
+-- (2,3)
+to[R, l=$R$, -] (2,1.5)
+to[cute inductor, l=$L$, -] (2,0)
+-- (0,0);
+\draw [dashed] (1.4,3.1) rectangle (2.6,-0.1) node at (2,0) [below] {Bobine};
+\end{circuitikz}
+\caption{Bobine alimentée}
+\end{figure}
+
+On a donc $V=28V$, et on souhaite mesurer $I$ en fonction $z$ (distance entre le bas de la bobine et le centre de la boule)\\
+
+\begin{multicols}{2}
+On relève les valeurs suivantes :\\\\
+\begin{tabular}{|c|c|c|}
+\hline 
+\textbf{Hauteur $z$} & \textbf{Courant $I$}\\ 
+\hline 
+$0.0330m$ & $0.542A$ \\ 
+\hline 
+$0.0375m$ & $0.702A$ \\ 
+\hline 
+$0.0434m$ & $0.922A$ \\ 
+\hline 
+$0.0462m$ & $1.112A$ \\ 
+\hline 
+$0.0527m$ & $1.342A$ \\ 
+\hline 
+$0.0555m$ & $1.431A$ \\ 
+\hline 
+$0.0588m$ & $1.601A$ \\ 
+\hline 
+$0.0613m$ & $1.822A$ \\ 
+\hline 
+$0.0623m$ & $1.851A$ \\ 
+\hline 
+$0.0626m$ & $1.952A$ \\ 
+\hline
+\end{tabular} \\
+
+On souhaite obtenir une interpolation affine de ces valeurs. On rentre dans MATLAB la commande \lstinline$polyfit(z,I,1);$ et on obtient que :\\
+
+$\boxed{I=45.8215z-1.0243}$\\
+
+\columnbreak
+On produit donc la courbe suivante :
+\begin{figure}[H]
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+xlabel=Hauteur $z$ (m),
+ylabel=Courant $I$ (A),
+xmin=0.033, xmax=0.0626,
+ymin=0, ymax=2,
+xtick={0.035,0.04,0.045,0.05,0.055,0.06},
+ytick={0,0.5,1,1.5,2},
+legend pos=north west,
+legend style={font=\tiny},
+ymajorgrids=true,
+grid style=dashed,
+]
+\addplot[color=blue, mark=square]
+coordinates {(0.033,0.542)(0.0375,0.702)(0.0434,0.922)(0.0462,1.112)(0.0527,1.342)(0.0555,1.431)(0.0588,1.601)(0.0613,1.822)(0.0623,1.851)(0.0626,1.952)};
+\legend{Intensité mesurée}
+\addplot[color=red,domain=0.033:0.0623] {45.8215*x-1.0243};
+\addlegendentry{Interpolation affine}
+\end{axis}
+\end{tikzpicture}
+\caption{Courbe de l'intensité mesurée en fonction de la distance}
+\end{center}
+\end{figure}
+
+\end{multicols}
+
+Au final, on choisit $I_0=1.8A$, ce qui nous donne $z_0=0.062m$
+
+\pagebreak
+\subsubsection{Résistance de la bobine}
+On réalise le montage suivant :
+\begin{figure}[H]
+\centering
+\begin{circuitikz}
+\draw
+(0,0) to[V, l=$28\text{V}$] (0,5) -- (2,5)
+to[rmeterwa, t=A, i=$i$] (2,3)
+to[R, l=$R$, -] (2,1.5)
+to[cute inductor, l=$L$, -] (2,0)
+-- (0,0);
+\draw [dashed] (1.4,3.1) rectangle (2.6,-0.1) node at (2,0) [below] {Bobine};
+\draw (2,0) -- (4,0) to[rmeterwa, t=V] (4,3) -- (2,3);
+\end{circuitikz}
+\caption{Mesure de la résistance}
+\end{figure}
+
+Après avoir patienté un moment, pour laisser le temps aux caractéristiques de la bobine d'être stables, on mesure $U=27.57V$ et $I=1.95A$\\
+On obtient donc la résistance de la bobine $\boxed{R=14.1\Omega}$
+
+\subsubsection{Inductance de la bobine}
+On réalise le montage suivant :
+\begin{figure}[H]
+\centering
+\begin{circuitikz}
+\draw
+(0,0) to[sinusoidal voltage source, l=$2\text{V}$, f=1Hz] (0,4) -- (2,4)
+to [iloop, name=I] (2,3)
+to[R, l=$R$, -] (2,1.5)
+to[cute inductor, l=$L$, -] (2,0)
+-- (0,0);
+\draw [dashed] (1.4,3.1) rectangle (2.6,-0.1) node at (2,0) [below] {Bobine};
+\draw (2.4,3.5) -- ++(1.5,0)
+to[oscope] ++(0,-2) node[ground]{};
+\end{circuitikz}
+\caption{Mesure de l'inductance}
+\end{figure}
+
+Après avoir patienté un moment, pour laisser le temps aux caractéristiques de la bobine d'être stables, on mesure un déphase $\varphi=150$°
+
+\begin{figure} [H]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{Schémas/Mesure inductance bobine.png} 
+\end{center}
+\caption{Réponse de la bobine}
+\end{figure}
+
+On calcule donc que l'inductance de la bobine vaut $-\dfrac{R\cdot \tan \varphi}{2\pi f} = -\dfrac{14.1\cdot \tan 150}{2\pi}\boxed{=1.296H}$
+
+\subsection{Conclusions}
+Si nous avons peu avancé sur la partie numérique, nous avons pu caractériser la bobine, ce qui nous servira pour la suite dans la modélisation précise de notre système
 
 \pagebreak
 \section{Bibliographie}
@@ -595,6 +808,8 @@ Liste des sites utilisés pour la réalisation du projet :
 \item \href{https://chat.openai.com/chat}{ChatGPT, modèle de langage automatisé}
 \item \href{https://ctan.mines-albi.fr/graphics/pgf/contrib/circuitikz/doc/circuitikzmanual.pdf}{Manuel de Circuitikz}
 \item \href{https://sciences-indus-cpge.papanicola.info/IMG/pdf/schemabloc.pdf}{Manuel des Schéma-blocs avec PGF/TIKZ}
+\item \href{https://sciences-indus-cpge.papanicola.info/IMG/pdf/schemabloc.pdf}{Manuel des Schéma-blocs avec PGF/TIKZ}
+\item \href{https://circuitdigest.com/microcontroller-projects/getting-started-with-stm8s-using-stvd-and-cosmic-c-compiler}{Tutoriels de CircuitDigest pour STM8s}
 \end{itemize}
 
 \end{document}
