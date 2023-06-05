@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.11)  2 JUN 2023 11:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.11)  5 JUN 2023 23:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1303,7 +1303,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout8 = `"Carnet de bord.lof"'.
 
  [2]
-<Schémas/Notes tableau séance 0.png, id=297, 1259.4553pt x 677.53125pt>
+<Schémas/Notes tableau séance 0.png, id=350, 1259.4553pt x 677.53125pt>
 File: Schémas/Notes tableau séance 0.png Graphic file (type png)
 <use Schémas/Notes tableau séance 0.png>
 Package pdftex.def Info: Schémas/Notes tableau séance 0.png  used on input li
@@ -1337,12 +1337,12 @@ s been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.137 O
        n obtient donc le bode suivant :]
-<Schémas/Bode initial.png, id=337, 843.15pt x 632.3625pt>
+<Schémas/Bode initial.png, id=390, 843.15pt x 632.3625pt>
 File: Schémas/Bode initial.png Graphic file (type png)
 <use Schémas/Bode initial.png>
 Package pdftex.def Info: Schémas/Bode initial.png  used on input line 140.
 (pdftex.def)             Requested size: 435.32422pt x 326.49532pt.
-<Schémas/Nyquist initial.png, id=338, 843.15pt x 632.3625pt>
+<Schémas/Nyquist initial.png, id=391, 843.15pt x 632.3625pt>
 File: Schémas/Nyquist initial.png Graphic file (type png)
 <use Schémas/Nyquist initial.png>
 Package pdftex.def Info: Schémas/Nyquist initial.png  used on input line 149.
@@ -1361,7 +1361,7 @@ s been already used, duplicate ignored
 l.183 \end{figure}
                    <./Schémas/Bode initial.png (PNG copy)> <./Schémas/Nyquist
  initial.png (PNG copy)>]
-<Schémas/Ampli.png, id=343, 449.42906pt x 420.06938pt>
+<Schémas/Ampli.png, id=396, 449.42906pt x 420.06938pt>
 File: Schémas/Ampli.png Graphic file (type png)
 <use Schémas/Ampli.png>
 Package pdftex.def Info: Schémas/Ampli.png  used on input line 218.
@@ -1385,7 +1385,7 @@ s been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.255 \end{figure}
                    <./Schémas/Ampli.png>]
-<Schémas/Correcteur PD.png, id=351, 330.48468pt x 284.56313pt>
+<Schémas/Correcteur PD.png, id=404, 330.48468pt x 284.56313pt>
 File: Schémas/Correcteur PD.png Graphic file (type png)
 <use Schémas/Correcteur PD.png>
 Package pdftex.def Info: Schémas/Correcteur PD.png  used on input line 261.
@@ -1409,7 +1409,7 @@ as been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.294 
        <./Schémas/Correcteur PD.png>]
-<Schémas/Modèle complet PD.png, id=358, 1818.795pt x 670.00313pt>
+<Schémas/Modèle complet PD.png, id=411, 1818.795pt x 670.00313pt>
 File: Schémas/Modèle complet PD.png Graphic file (type png)
 <use Schémas/Modèle complet PD.png>
 Package pdftex.def Info: Schémas/Modèle complet PD.png  used on input line 29
@@ -1443,7 +1443,7 @@ as been already used, duplicate ignored
 l.326 O
        n veut donc simuler notre bloc amplificateur. Dans l'idéal on devrai...
  <./Schémas/Modèle complet PD.png>]
-<Schémas/sim matlab ampli.png, id=381, 843.15pt x 632.3625pt>
+<Schémas/sim matlab ampli.png, id=434, 843.15pt x 632.3625pt>
 File: Schémas/sim matlab ampli.png Graphic file (type png)
 <use Schémas/sim matlab ampli.png>
 Package pdftex.def Info: Schémas/sim matlab ampli.png  used on input line 329.
@@ -1454,7 +1454,7 @@ Overfull \hbox (5.0pt too wide) in paragraph at lines 329--330
  [] 
  []
 
-<Schémas/ltspice ampli.png, id=382, 702.37407pt x 532.23843pt>
+<Schémas/ltspice ampli.png, id=435, 702.37407pt x 532.23843pt>
 File: Schémas/ltspice ampli.png Graphic file (type png)
 <use Schémas/ltspice ampli.png>
 Package pdftex.def Info: Schémas/ltspice ampli.png  used on input line 337.
@@ -1464,7 +1464,7 @@ Overfull \hbox (5.0pt too wide) in paragraph at lines 337--338
  [] 
  []
 
-<Schémas/sim ampli.png, id=383, 1111.90407pt x 276.28218pt>
+<Schémas/sim ampli.png, id=436, 1111.90407pt x 276.28218pt>
 File: Schémas/sim ampli.png Graphic file (type png)
 <use Schémas/sim ampli.png>
 Package pdftex.def Info: Schémas/sim ampli.png  used on input line 347.
@@ -1489,7 +1489,7 @@ as been already used, duplicate ignored
 l.362 \section
               {Séance 2 - 18/04/2023} <./Schémas/sim matlab ampli.png (PNG co
 py)> <./Schémas/ltspice ampli.png> <./Schémas/sim ampli.png>]
-<Schémas/Brochage STM8.jpg, id=390, 3276.24pt x 2457.18pt>
+<Schémas/Brochage STM8.jpg, id=443, 3276.24pt x 2457.18pt>
 File: Schémas/Brochage STM8.jpg Graphic file (type jpg)
 <use Schémas/Brochage STM8.jpg>
 Package pdftex.def Info: Schémas/Brochage STM8.jpg  used on input line 397.
@@ -1576,7 +1576,7 @@ as been already used, duplicate ignored
 l.752 \subsubsection
                     {Résistance de la bobine}]
 \absfshift=\dimen346
-<Schémas/Mesure inductance bobine.png, id=608, 602.25pt x 361.35pt>
+<Schémas/Mesure inductance bobine.png, id=661, 602.25pt x 361.35pt>
 File: Schémas/Mesure inductance bobine.png Graphic file (type png)
 <use Schémas/Mesure inductance bobine.png>
 Package pdftex.def Info: Schémas/Mesure inductance bobine.png  used on input l
@@ -1601,59 +1601,141 @@ as been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.801 \subsection
                  {Conclusions} <./Schémas/Mesure inductance bobine.png>]
-<Schémas/Mesure ampli TL.png, id=615, 1057.70157pt x 633.86812pt>
+<Schémas/Mesure ampli TL.png, id=668, 1057.70157pt x 633.86812pt>
 File: Schémas/Mesure ampli TL.png Graphic file (type png)
 <use Schémas/Mesure ampli TL.png>
 Package pdftex.def Info: Schémas/Mesure ampli TL.png  used on input line 819.
-(pdftex.def)             Requested size: 483.69687pt x 289.87093pt.
+(pdftex.def)             Requested size: 386.95897pt x 231.89674pt.
+<Schémas/Brochage capteur.png, id=669, 210.03468pt x 166.37157pt>
+File: Schémas/Brochage capteur.png Graphic file (type png)
+<use Schémas/Brochage capteur.png>
+Package pdftex.def Info: Schémas/Brochage capteur.png  used on input line 834.
+
+(pdftex.def)             Requested size: 241.84843pt x 191.57204pt.
 
 [18
 pdfTeX warning (ext4): destination with the same identifier (name{figure.22}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.831 \section
-              {Bibliographie} <./Schémas/Mesure ampli TL.png>] [19] [20]
-(Carnet de bord.aux)
-Package rerunfilecheck Info: File `"Carnet de bord".out' has not changed.
-(rerunfilecheck)             Checksum: 6C6C9DDB134F33F85EEF951B01E75FC1;9048.
+l.838 
+       <./Schémas/Mesure ampli TL.png>]
+<Schémas/Mesure ampli LM.png, id=675, 509.27765pt x 361.35pt>
+File: Schémas/Mesure ampli LM.png Graphic file (type png)
+<use Schémas/Mesure ampli LM.png>
+Package pdftex.def Info: Schémas/Mesure ampli LM.png  used on input line 844.
+(pdftex.def)             Requested size: 386.95897pt x 274.57372pt.
+<Schémas/Mesure ampli LM sin.png, id=676, 506.6428pt x 362.47922pt>
+File: Schémas/Mesure ampli LM sin.png Graphic file (type png)
+<use Schémas/Mesure ampli LM sin.png>
+Package pdftex.def Info: Schémas/Mesure ampli LM sin.png  used on input line 8
+52.
+(pdftex.def)             Requested size: 386.95897pt x 276.85873pt.
+ [19
+pdfTeX warning (ext4): destination with the same identifier (name{figure.23}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.856 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.24}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.856 
+       <./Schémas/Brochage capteur.png> <./Schémas/Mesure ampli LM.png>]
+[20
+pdfTeX warning (ext4): destination with the same identifier (name{figure.25}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.885 A
+       près vérifications, on valide le bon fonctionnement du code <./Schéma
+s/Mesure ampli LM sin.png>]
+<Schémas/Arduino PWM.png, id=711, 510.03047pt x 360.59718pt>
+File: Schémas/Arduino PWM.png Graphic file (type png)
+<use Schémas/Arduino PWM.png>
+Package pdftex.def Info: Schémas/Arduino PWM.png  used on input line 912.
+(pdftex.def)             Requested size: 386.95897pt x 273.59451pt.
+ [21
+pdfTeX warning (ext4): destination with the same identifier (name{figure.26}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.927 void 
+           setup() <./Schémas/Arduino PWM.png>] [22] [23] (Carnet de bord.aux)
+
+Package rerunfilecheck Warning: File `"Carnet de bord".out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `"Carnet de bord".out':
+(rerunfilecheck)             Before: D047B66AC6876DBCD4444F8F2C50F4BA;10133
+(rerunfilecheck)             After:  77F63936B9E926A20D945E1810983E91;10229.
  ) 
 Here is how much of TeX's memory you used:
- 61298 strings out of 476326
- 1558271 string characters out of 5787722
- 2443472 words of memory out of 5000000
- 80706 multiletter control sequences out of 15000+600000
+ 61466 strings out of 476326
+ 1561049 string characters out of 5787722
+ 2443487 words of memory out of 5000000
+ 80795 multiletter control sequences out of 15000+600000
  533802 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,20n,89p,736b,2393s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
-1095.pk> <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\ecrm0800.pk> <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\ecti1095.pk> <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\ectt1000.pk> <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/ljfour
-/jknappen/ec/dpi600\ecrm0600.pk> <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi600\eccc1095.pk> <C:\Users\guill\AppData\Local\MiKTeX\fon
-ts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\guill\AppData\Local\MiKT
-eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\guill\AppData\Loca
-l\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\guill\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\guill\
-AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\
-guill\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\
-Users\guill\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk
-><C:/Users/guill/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mbsy10.pfb><C:/Users/guill/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmbx10.pfb><C:/Users/guill/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmmi10.pfb><C:/Users/guill/AppData/Local/Programs/MiKTeX/font
-s/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/guill/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/guill/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/guill/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/guill/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/
-guill/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pf
-b>
-Output written on "Carnet de bord.pdf" (20 pages, 4303319 bytes).
+ 84i,20n,89p,736b,2491s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{section.10} has been referenced but does not exist,
+ replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.9.1.3} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.9.1.2} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.9.1.1} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.9.1} has been referenced but does not ex
+ist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.9.0.2} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.9.0.1} has been referenced but does n
+ot exist, replaced by a fixed one
+
+ <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm10
+95.pk> <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
+ecrm0800.pk> <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/d
+pi600\ecti1095.pk> <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappe
+n/ec/dpi600\ectt1000.pk> <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/ljfour/j
+knappen/ec/dpi600\ecrm0600.pk> <C:\Users\guill\AppData\Local\MiKTeX\fonts/pk/lj
+four/jknappen/ec/dpi600\eccc1095.pk> <C:\Users\guill\AppData\Local\MiKTeX\fonts
+/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\guill\AppData\Local\MiKTeX
+\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\guill\AppData\Local\
+MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\guill\AppData\
+Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\guill\Ap
+pData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\gu
+ill\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Us
+ers\guill\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk><
+C:/Users/guill/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmb
+sy10.pfb><C:/Users/guill/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmbx10.pfb><C:/Users/guill/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmmi10.pfb><C:/Users/guill/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/guill/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/guill/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/guill/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/guill/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/gu
+ill/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb>
+Output written on "Carnet de bord.pdf" (23 pages, 4458076 bytes).
 PDF statistics:
- 1180 PDF objects out of 1200 (max. 8388607)
- 280 named destinations out of 1000 (max. 500000)
- 441 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1336 PDF objects out of 1440 (max. 8388607)
+ 355 named destinations out of 1000 (max. 500000)
+ 533 words of extra memory for PDF output out of 10000 (max. 10000000)
 

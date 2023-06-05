@@ -816,9 +816,9 @@ Nous avons réalisé le montage présenté dans la partie \ref{fig:Simulation am
 
 \begin{figure} [H]
 \begin{center}
-\includegraphics[width=1\textwidth]{Schémas/Mesure ampli TL.png} 
+\includegraphics[width=0.8\textwidth]{Schémas/Mesure ampli TL.png} 
 \end{center}
-\caption{Mesure du montage amplificateur}
+\caption{Mesure du montage amplificateur, avec TL081}
 \end{figure}
 
 On a en jaune la commande et en bleu la sortie. Au final, on sent bien que la bille est plus ou moins attirée, mais nous n'avons pas l'effet "on-off" que nous souhaitions obtenir.
@@ -827,6 +827,123 @@ Un autre problème auquel nous avons été confronté est que le courant délivr
 \subsection{Pistes pour la suite}
 Il semblerait que le TL081 ne soit pas adapté à notre montage. On essaiera à la prochaine séance d'utiliser un LM342 à la place
 
+\section{Séance 5 - 05/06/2023}
+\subsection{Éléments utiles}
+\begin{figure} [H]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{Schémas/Brochage capteur.png} 
+\end{center}
+\caption{Brochage du capteur}
+\end{figure}
+
+\subsection{Amplification}
+\subsubsection{Montage}
+On a donc changé l'AOP pour le LM342. On obtient le résultat suivant pour un signal carré :
+\begin{figure} [H]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{Schémas/Mesure ampli LM.png} 
+\end{center}
+\caption{Mesure du montage amplificateur, avec LM342}
+\end{figure}
+
+On mesure aussi avec un signal sinusoïdal d'entrée :
+\begin{figure} [H]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{Schémas/Mesure ampli LM sin.png} 
+\end{center}
+\caption{Mesure du montage amplificateur en sinusoïdal}
+\end{figure}
+
+On constate une saturation aux alentours de $27V$, ce qui correspond à ce que nous avions vu en simulation.
+
+\subsubsection{Soudure}
+On a par la suite commencé à souder sur une platine les composants, pour avoir un montage plus pérenne
+
+\subsection{Arduino}
+Pour implémenter notre correcteur, on aurait besoin d'un système permettant de le faire simplement et de manière modulaire. On utilise donc un Arduino temporairement, afin de faire nos réglages
+
+\subsubsection{Capteur de distance}
+Pour commencer, on se base sur le code de \href{https://www.instructables.com/How-to-Use-the-Sharp-IR-Sensor-GP2Y0A41SK0F-Arduin/}{codebender cc} pour tester le capteur. On en retire le code suivant : 
+
+\begin{lstlisting}[language = C]
+#define sensor A0
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  float volts = analogRead(sensor)*0.0048828125;
+  int distance = 13*pow(volts, -1);
+  if (distance <= 30){
+    Serial.println(distance);
+  }
+  delay(300);
+}
+\end{lstlisting}
+
+Après vérifications, on valide le bon fonctionnement du code
+
+\subsubsection{Signal PWM}
+On se base sur le code de \href{https://passionelectronique.fr/pwm-arduino/}{Passion Electronique} pour cette partie. On en retire le code suivant : 
+
+\begin{lstlisting}[language = C]
+#define broche_pwm 5
+
+void setup() {
+  pinMode(broche_pwm, OUTPUT);
+}
+
+void loop() {
+  int rapport_cyclique = 0;  
+  while (rapport_cyclique <= 255)
+  {
+    analogWrite(broche_pwm, rapport_cyclique);
+    rapport_cyclique += 10;
+    delay(100);
+  }
+}
+\end{lstlisting}
+
+On mesure bien un rapport cyclique allant de 0 à 100 :
+
+\begin{figure} [H]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{Schémas/Arduino PWM.png} 
+\end{center}
+\caption{Signal PWM généré par l'Arduino}
+\end{figure}
+
+\subsubsection{PID}
+On utilise la librairie PID fournie par Brett Beauregard pour essayer d'implémenter un correcteur. On a le code suivant : 
+
+\begin{lstlisting}[language = C]
+#include <PID_v1.h>
+
+double Setpoint, Input, Output;
+
+PID myPID(&Input, &Output, &Setpoint,2,5,1, REVERSE);
+
+void setup()
+{
+  Input = analogRead(0);
+  Setpoint = 520;
+  myPID.SetMode(AUTOMATIC);
+}
+
+void loop()
+{
+  Input = analogRead(0);
+  myPID.Compute();
+  analogWrite(3,Output);
+}
+\end{lstlisting}
+
+On a donc dans cet exemple (fourni par la documentation) une valeur de $Kp = 2$,  $Ki = 5$ et $Kd = 1$. On sait bien qu'il ne s'agit pas des bonnes valeurs pour notre système, on pourra les corriger plus tard. Au final, on obtient que la boule oscille autour de la consigne, mais on valide bien la lecture de la distance, et le pilotage via l'ampli de la bobine.
+
+\subsection{Boule}
+Les mesures de Vincent et Alexandre ont montré l'importance que la boule soit blanche. On l'a par conséquent poncée et peinte
+
 \pagebreak
 \section{Bibliographie}
 Liste des sites utilisés pour la réalisation du projet :
@@ -834,7 +951,6 @@ Liste des sites utilisés pour la réalisation du projet :
 \item \href{https://www.overleaf.com/learn}{Overleaf, guide d'utilisation du \LaTeX{}}
 \item \href{https://chat.openai.com/chat}{ChatGPT, modèle de langage automatisé}
 \item \href{https://ctan.mines-albi.fr/graphics/pgf/contrib/circuitikz/doc/circuitikzmanual.pdf}{Manuel de Circuitikz}
-\item \href{https://sciences-indus-cpge.papanicola.info/IMG/pdf/schemabloc.pdf}{Manuel des Schéma-blocs avec PGF/TIKZ}
 \item \href{https://sciences-indus-cpge.papanicola.info/IMG/pdf/schemabloc.pdf}{Manuel des Schéma-blocs avec PGF/TIKZ}
 \item \href{https://circuitdigest.com/microcontroller-projects/getting-started-with-stm8s-using-stvd-and-cosmic-c-compiler}{Tutoriels de CircuitDigest pour STM8s}
 \end{itemize}

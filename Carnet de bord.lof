@@ -20,4 +20,8 @@
 \contentsline {figure}{\numberline {19}{\ignorespaces Mesure de la résistance}}{17}{figure.19}%
 \contentsline {figure}{\numberline {20}{\ignorespaces Mesure de l'inductance}}{17}{figure.20}%
 \contentsline {figure}{\numberline {21}{\ignorespaces Réponse de la bobine}}{17}{figure.21}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Mesure du montage amplificateur}}{18}{figure.22}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Mesure du montage amplificateur, avec TL081}}{18}{figure.22}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Brochage du capteur}}{19}{figure.23}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Mesure du montage amplificateur, avec LM342}}{19}{figure.24}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Mesure du montage amplificateur en sinusoïdal}}{20}{figure.25}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Signal PWM généré par l'Arduino}}{21}{figure.26}%

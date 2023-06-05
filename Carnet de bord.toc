@@ -43,5 +43,15 @@
 \contentsline {section}{\numberline {7}Séance 4 - 02/06/2023}{18}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Choix des composants}{18}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}Réalisation}{18}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Pistes pour la suite}{19}{subsection.7.3}%
-\contentsline {section}{\numberline {8}Bibliographie}{20}{section.8}%
+\contentsline {subsection}{\numberline {7.3}Pistes pour la suite}{18}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Séance 5 - 05/06/2023}{19}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Éléments utiles}{19}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Amplification}{19}{subsection.8.2}%
+\contentsline {subsubsection}{\numberline {8.2.1}Montage}{19}{subsubsection.8.2.1}%
+\contentsline {subsubsection}{\numberline {8.2.2}Soudure}{20}{subsubsection.8.2.2}%
+\contentsline {subsection}{\numberline {8.3}Arduino}{20}{subsection.8.3}%
+\contentsline {subsubsection}{\numberline {8.3.1}Capteur de distance}{20}{subsubsection.8.3.1}%
+\contentsline {subsubsection}{\numberline {8.3.2}Signal PWM}{21}{subsubsection.8.3.2}%
+\contentsline {subsubsection}{\numberline {8.3.3}PID}{21}{subsubsection.8.3.3}%
+\contentsline {subsection}{\numberline {8.4}Boule}{22}{subsection.8.4}%
+\contentsline {section}{\numberline {9}Bibliographie}{23}{section.9}%
