@@ -62,4 +62,10 @@
 \contentsline {subsection}{\numberline {9.4}Recherche des valeurs du PID}{24}{subsection.9.4}%
 \contentsline {subsection}{\numberline {9.5}Correction du code}{24}{subsection.9.5}%
 \contentsline {section}{\numberline {10}Séance 7 - 07/06/2023}{25}{section.10}%
-\contentsline {section}{\numberline {11}Bibliographie}{26}{section.11}%
+\contentsline {subsection}{\numberline {10.1}Illustration du problème}{25}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Retour en arrière !}{25}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Tests sur les valeurs de PID}{25}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}Un nouveau problème}{27}{subsection.10.4}%
+\contentsline {subsection}{\numberline {10.5}Une nouvelle manière de calculer le PID}{27}{subsection.10.5}%
+\contentsline {subsection}{\numberline {10.6}Conclusions pour cette séance}{29}{subsection.10.6}%
+\contentsline {section}{\numberline {11}Bibliographie}{30}{section.11}%

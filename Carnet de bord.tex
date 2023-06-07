@@ -1048,6 +1048,150 @@ void loop()
 \end{lstlisting}
 
 \section{Séance 7 - 07/06/2023}
+\subsection{Illustration du problème}
+Nous rencontrons à nouveau le problème rencontré hier. Nous avons mesuré ceci :
+\begin{figure} [H]
+\begin{center}
+\includegraphics[width=1\textwidth]{Schémas/Pb entrée sortie.png} 
+\end{center}
+\caption{Illustration du problème}
+\end{figure}
+
+On a en jaune la sortie de l'Arduino (0V - 5V avec une période de 10s) et en bleu l'ampérage de la bobine $(2V = 1A)$
+
+\subsection{Retour en arrière !}
+À la suite de nos problèmes, nous avons fait le choix de faire machine arrière et de revenir à un montage sur breadboard. Faire ceci nous a permis d'avoir à nouveau un montage fonctionnel, et de rechercher les valeurs de PID qui fonctionneraient pour nous
+
+\subsection{Tests sur les valeurs de PID}
+On a donc pu reprendre nos recherches sur les valeurs de notre régulateur. On a légèrement corrigé le code :
+\begin{lstlisting}[language = C]
+#include <PID_v1.h>
+
+double Consigne;
+double Entree;
+double Sortie;
+double Kp = 0.8, Ki = 5, Kd = 3;
+
+PID myPID(&Entree, &Sortie, &Consigne, Kp, Ki, Kd, DIRECT);
+
+void setup()
+{
+  Serial.begin(9600);
+
+  Consigne = map(analogRead(0), 0, 1023, 0, 255) + 15;
+
+  myPID.SetMode(AUTOMATIC);
+  myPID.SetTunings(Kp, Ki, Kd);  
+}
+
+void loop()
+{
+  Entree = 255 - map(analogRead(0), 0, 1023, 0, 255);
+  myPID.Compute();
+  analogWrite(3,Sortie);
+
+  Serial.println(Entree);
+  Serial.print(" ");
+  Serial.println(Sortie);
+  Serial.println(" ");
+  delay(100);
+}
+\end{lstlisting}
+
+Nous avons notamment amélioré les points suivants :
+\begin{itemize}
+\item Calcul automatique de la consigne : elle est maintenant dépendante de l'état initial, ce qui permet de compenser les défauts de mesure du capteur
+\item Plages de valeurs corrigées
+\item Valeur d'entrée calculée en inverse, et mode de calcul en direct (meilleurs résultats)
+\end{itemize}
+
+On obtient avec le serial plotter des courbes comme celles-ci :
+\begin{figure} [H]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{Schémas/Serial plotter wip.png} 
+\end{center}
+\caption{Capture du serial plotter}
+\end{figure}
+On a en orange la sortie (puissance du signal PWM) et en bleu la position (valeur de distance)\\
+
+On obtient sur l'oscillo des graphes comme celui-ci :
+\begin{figure} [H]
+\begin{center}
+\includegraphics[width=1\textwidth]{Schémas/Oscillo regulateur wip.png} 
+\end{center}
+\caption{Affichage des signaux sur l'oscilloscope}
+\end{figure}
+On a en jaune la tension qui pilote la bobine, et en bleu le courant qui passe dans celle-ci
+
+\subsection{Un nouveau problème}
+À force de recherches, nous nous sommes rendus compte que notre support place la boule trop près du capteur, générant ainsi une instabilité. Nous avons concu une autre support pour la placer plus haut, ce qui nous a permis d'avoir de meilleurs résultats. Nous avons également collé ce support pour éviter de fausser les mesures à cause des vibrations
+
+\subsection{Une nouvelle manière de calculer le PID}
+Nous avons décidé en fin de séance d'améliorer notre montage. On ajoute sur les bornes A1, A2 et A3 de l'arduino des potentiomètres, ce qui nous permet de modifier en temps réel les valeurs du régulateur. On réalise le code suivant :
+\begin{lstlisting}[language = C]
+#include <PID_v1.h>
+
+double Consigne;
+double Entree;
+double Sortie;
+double Kp, Ki, Kd;
+
+PID myPID(&Entree, &Sortie, &Consigne, Kp, Ki, Kd, DIRECT);
+
+void setup()
+{
+  Consigne = map(analogRead(0), 0, 1023, 0, 255) + 15;
+
+  Kp = (map(analogRead(1), 0, 1023, 1000, 0));
+  Ki = (map(analogRead(2), 0, 1023, 1000, 0));
+  Kd = (map(analogRead(3), 0, 1023, 1000, 0));
+
+  Kp = Kp/100;
+  Ki = Ki/100;
+  Kd = Kd/100;
+
+  myPID.SetTunings(Kp, Ki, Kd);  
+
+  myPID.SetMode(AUTOMATIC);
+}
+
+void loop()
+{
+  Kp = (map(analogRead(1), 0, 1023, 1000, 0));
+  Ki = (map(analogRead(2), 0, 1023, 1000, 0));
+  Kd = (map(analogRead(3), 0, 1023, 1000, 0));
+
+  Kp = Kp/100;
+  Ki = Ki/100;
+  Kd = Kd/100;
+
+  myPID.SetTunings(Kp, Ki, Kd);  
+
+  Entree = 255 - map(analogRead(0), 0, 1023, 0, 255);
+  myPID.Compute();
+  analogWrite(3,Sortie);
+}
+\end{lstlisting}
+
+On peut donc régler en temps réel les 3 valeurs, ce qui nous permet d'avoir ce genre de résultats "en direct" :
+\begin{figure} [H]
+\begin{center}
+\includegraphics[width=1\textwidth]{Schémas/Nouveau PID 1.png} 
+\end{center}
+\caption{Exemple 1 avec les potentiomètres}
+\end{figure}
+Ici on a majoritairement des composantes PI
+
+\begin{figure} [H]
+\begin{center}
+\includegraphics[width=1\textwidth]{Schémas/Nouveau PID 2.png} 
+\end{center}
+\caption{Exemple 2 avec les potentiomètres}
+\end{figure}
+Ici on a aussi une composante dérivée
+
+\subsection{Conclusions pour cette séance}
+Au final, nous sommes capables de régler en temps réel les valeurs de notre correcteur. Nous arrivons à obtenir des oscillations, plus ou moins importantes, et plus ou moins rapides. Si nous avions des valeurs à mettre en place il serait très probable que la boule lévite de manière stable. Nous sommes cependant limités par la fréquence d'échantillonnage du système, ainsi que de la lenteur de la bobine à atteindre la valeur de courant désirée
 
 \pagebreak
 \section{Bibliographie}

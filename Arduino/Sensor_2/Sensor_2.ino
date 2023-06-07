@@ -5,6 +5,6 @@ void setup() {
 }
 
 void loop() {
-  Serial.println(analogRead(sensor));
+  Serial.println(map(analogRead(0), 0, 1024, 0, 255));
   delay(300);
 }
