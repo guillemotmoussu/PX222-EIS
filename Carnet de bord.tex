@@ -788,7 +788,6 @@ to[oscope] ++(0,-2) node[ground]{};
 \end{figure}
 
 Après avoir patienté un moment, pour laisser le temps aux caractéristiques de la bobine d'être stables, on mesure un déphase $\varphi=150$°
-
 \begin{figure} [H]
 \begin{center}
 \includegraphics[width=0.5\textwidth]{Schémas/Mesure inductance bobine.png} 
@@ -813,7 +812,6 @@ Lors de cette séance, nous nous sommes donnés l'objectif de réaliser l'ampli 
 
 \subsection{Réalisation}
 Nous avons réalisé le montage présenté dans la partie \ref{fig:Simulation ampli}. Pour le moment le meilleur résultat que nous ayons obtenu est le suivant :
-
 \begin{figure} [H]
 \begin{center}
 \includegraphics[width=0.8\textwidth]{Schémas/Mesure ampli TL.png} 
@@ -831,30 +829,36 @@ Il semblerait que le TL081 ne soit pas adapté à notre montage. On essaiera à 
 \subsection{Éléments utiles}
 \begin{figure} [H]
 \begin{center}
-\includegraphics[width=0.5\textwidth]{Schémas/Brochage capteur.png} 
+\includegraphics[width=0.4\textwidth]{Schémas/Brochage capteur.png} 
 \end{center}
 \caption{Brochage du capteur}
 \end{figure}
 
+On a donc $V_0$ en bleu, $GND$ en vert et $V_{CC}$ en orange
+
 \subsection{Amplification}
 \subsubsection{Montage}
+\begin{multicols}{2}
 On a donc changé l'AOP pour le LM342. On obtient le résultat suivant pour un signal carré :
 \begin{figure} [H]
 \begin{center}
-\includegraphics[width=0.8\textwidth]{Schémas/Mesure ampli LM.png} 
+\includegraphics[width=0.5\textwidth]{Schémas/Mesure ampli LM.png} 
 \end{center}
 \caption{Mesure du montage amplificateur, avec LM342}
 \end{figure}
 
+On constate que le signal est bien amplifié\\\\
+
 On mesure aussi avec un signal sinusoïdal d'entrée :
 \begin{figure} [H]
 \begin{center}
-\includegraphics[width=0.8\textwidth]{Schémas/Mesure ampli LM sin.png} 
+\includegraphics[width=0.5\textwidth]{Schémas/Mesure ampli LM sin.png} 
 \end{center}
 \caption{Mesure du montage amplificateur en sinusoïdal}
 \end{figure}
 
-On constate une saturation aux alentours de $27V$, ce qui correspond à ce que nous avions vu en simulation.
+On constate une saturation aux alentours de $27V$, ce qui correspond à ce que nous avions vu en simulation
+\end{multicols}
 
 \subsubsection{Soudure}
 On a par la suite commencé à souder sur une platine les composants, pour avoir un montage plus pérenne
@@ -864,7 +868,6 @@ Pour implémenter notre correcteur, on aurait besoin d'un système permettant de
 
 \subsubsection{Capteur de distance}
 Pour commencer, on se base sur le code de \href{https://www.instructables.com/How-to-Use-the-Sharp-IR-Sensor-GP2Y0A41SK0F-Arduin/}{codebender cc} pour tester le capteur. On en retire le code suivant : 
-
 \begin{lstlisting}[language = C]
 #define sensor A0
 
@@ -884,9 +887,25 @@ void loop() {
 
 Après vérifications, on valide le bon fonctionnement du code
 
+\subsubsection{Consigne}
+Afin de déterminer la consigne, on rédige le code suivant qui nous pemettra de mesurer la valeur de consigne :
+\begin{lstlisting}[language = C]
+#define sensor A0
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  Serial.println(analogRead(sensor));
+  delay(300);
+}
+\end{lstlisting}
+
+On peut donc maintenant grâce au moniteur série déterminer précisément la consigne que nous souhaitons avoir
+
 \subsubsection{Signal PWM}
 On se base sur le code de \href{https://passionelectronique.fr/pwm-arduino/}{Passion Electronique} pour cette partie. On en retire le code suivant : 
-
 \begin{lstlisting}[language = C]
 #define broche_pwm 5
 
@@ -916,7 +935,6 @@ On mesure bien un rapport cyclique allant de 0 à 100 :
 
 \subsubsection{PID}
 On utilise la librairie PID fournie par Brett Beauregard pour essayer d'implémenter un correcteur. On a le code suivant : 
-
 \begin{lstlisting}[language = C]
 #include <PID_v1.h>
 
@@ -944,6 +962,93 @@ On a donc dans cet exemple (fourni par la documentation) une valeur de $Kp = 2$,
 \subsection{Boule}
 Les mesures de Vincent et Alexandre ont montré l'importance que la boule soit blanche. On l'a par conséquent poncée et peinte
 
+\section{Séance 6 - 06/06/2023}
+\subsection{Peinture}
+On a donc peint la boule en blanc :
+\begin{figure} [H]
+\begin{center}
+\includegraphics[width=0.3\textwidth]{Schémas/Boule peinte.jpg} 
+\end{center}
+\caption{Boule peinte}
+\end{figure}
+
+\subsection{Soudure}
+On termine de souder notre montage sur la platine :
+\begin{figure} [H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{Schémas/Montage soudé.jpg} 
+\end{center}
+\caption{Montage soudé sur platine}
+\end{figure}
+
+Choix technologiques retenus :
+\begin{itemize}
+\item Utilisation de câbles bananes pour se connecter à la bobine et au générateur
+\item Utilisation de câbles dupont pour se connecter à l'Arduino
+\item On a déporté le transistor (expliqué plus loin) de la platine
+\end{itemize}
+
+\subsection{Problèmes rencontrés}
+Une fois le montage soudé, nous avons pu valider son fonctionnement avec la génération d'un signal carré via l'Arduino :
+\begin{lstlisting}[language = C]
+void setup() {
+  pinMode(3,OUTPUT);
+}
+
+void loop() {
+  digitalWrite(3,HIGH);
+  delay(5000);
+  digitalWrite(3,LOW);
+  delay(5000);
+}
+\end{lstlisting}
+
+Nous avons ensuite repris le code du régulateur testé hier, et commencé à chercher des valeurs plus cohérentes de PID. Cependant, après un moment, on constate que le montage ne fonctionne plus comme prévu (la bobine est alimentée en permanence, même si la sortie de l'Arduino est à 0). On constate à l'aide du testeur de transistor que le TIP est en défaut, et qu'il y a une continuité entre ses broches. Après avoir changé le transistor, validé le montage, et repris les tests, le problème s'est présenté une seconde fois. Par conséquent, on a décidé de déporter le transistor de la platine, car nous pensons que le chaleur émise est responsable du court-circuit
+
+\subsection{Recherche des valeurs du PID}
+Pour avoir un résultat plus satisfaisant, on a commencé à chercher des valeurs de PID plus intéressantes. On commence par fixer $Ki$ et $Kd$ à 0, et on cherche la valeur de $Kp$ la plus satisfaisante. À cause des problèmes techniques rencontrés plus haut, on a pas encore obtenu de résultats satisfaisants par manque de temps
+
+\subsection{Correction du code}
+On a continué à avancer sur le code servant à appliquer le PID au système :
+\begin{lstlisting}[language = C]
+#include <PID_v1.h>
+
+double Consigne;
+double Entree;
+double Sortie;
+double Kp = 5, Ki = 1, Kd = 0;
+
+PID myPID(&Entree, &Sortie, &Consigne, Kp, Ki, Kd, REVERSE);
+
+void setup()
+{
+  Serial.begin(9600);
+
+  Consigne = map(analogRead(0), 0, 1024, 0, 255);
+  Serial.print(Consigne);
+  delay(1000);
+
+  myPID.SetMode(AUTOMATIC);
+  myPID.SetTunings(Kp, Ki, Kd);  
+}
+
+void loop()
+{
+  Entree = map(analogRead(0), 0, 1024, 0, 255);
+  myPID.Compute();
+  analogWrite(3,Sortie);
+
+  Serial.print(Entree);
+  Serial.print(" ");
+  Serial.println(Sortie);
+  Serial.print(" ");  
+  Serial.println(Consigne);
+  delay(50);
+}
+\end{lstlisting}
+
+\section{Séance 7 - 07/06/2023}
+
 \pagebreak
 \section{Bibliographie}
 Liste des sites utilisés pour la réalisation du projet :
@@ -953,6 +1058,9 @@ Liste des sites utilisés pour la réalisation du projet :
 \item \href{https://ctan.mines-albi.fr/graphics/pgf/contrib/circuitikz/doc/circuitikzmanual.pdf}{Manuel de Circuitikz}
 \item \href{https://sciences-indus-cpge.papanicola.info/IMG/pdf/schemabloc.pdf}{Manuel des Schéma-blocs avec PGF/TIKZ}
 \item \href{https://circuitdigest.com/microcontroller-projects/getting-started-with-stm8s-using-stvd-and-cosmic-c-compiler}{Tutoriels de CircuitDigest pour STM8s}
+\item \href{https://www.instructables.com/How-to-Use-the-Sharp-IR-Sensor-GP2Y0A41SK0F-Arduin/}{Implémentation du capteur Sharp pour Arduino}
+\item \href{https://passionelectronique.fr/pwm-arduino/}{PWM sur Arduino}
+\item \href{https://playground.arduino.cc/Code/PIDLibrary/}{Librairie PID d'Arduino}
 \end{itemize}
 
 \end{document}

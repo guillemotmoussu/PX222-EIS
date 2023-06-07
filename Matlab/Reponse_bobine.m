@@ -23,3 +23,6 @@ grid on
 figure;
 nyquist(sys)
 grid on
+figure;
+step(sys)
+grid on

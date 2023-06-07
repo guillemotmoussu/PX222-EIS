@@ -1,33 +1,34 @@
-/********************************************************
- * PID Basic Example
- * Reading analog input 0 to control analog PWM output 3
- ********************************************************/
-
 #include <PID_v1.h>
 
-//Define Variables we'll be connecting to
-double Setpoint, Input, Output;
+double Consigne;
+double Entree;
+double Sortie;
+double Kp = 5, Ki = 1, Kd = 0;
 
-//Specify the links and initial tuning parameters
-PID myPID(&Input, &Output, &Setpoint,2,5,1, REVERSE);
+PID myPID(&Entree, &Sortie, &Consigne, Kp, Ki, Kd, REVERSE);
 
 void setup()
 {
-  //initialize the variables we're linked to
-  Input = analogRead(0);
-  Setpoint = 520;
+  Serial.begin(9600);
 
-  //turn the PID on
+  Consigne = map(analogRead(0), 0, 1024, 0, 255);
+  Serial.print(Consigne);
+  delay(1000);
+
   myPID.SetMode(AUTOMATIC);
-  //Serial.begin(9600); // start the serial port
+  myPID.SetTunings(Kp, Ki, Kd);  
 }
 
 void loop()
 {
-  Input = analogRead(0);
+  Entree = map(analogRead(0), 0, 1024, 0, 255);
   myPID.Compute();
-  analogWrite(3,Output);
-  //Serial.println(analogRead(0));
-  //Serial.println(Output);
-  //delay(100);
+  analogWrite(3,Sortie);
+
+  Serial.print(Entree);
+  Serial.print(" ");
+  Serial.println(Sortie);
+  Serial.print(" ");  
+  Serial.println(Consigne);
+  //delay(50);
 }
