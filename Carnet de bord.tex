@@ -1193,6 +1193,42 @@ Ici on a aussi une composante dérivée
 \subsection{Conclusions pour cette séance}
 Au final, nous sommes capables de régler en temps réel les valeurs de notre correcteur. Nous arrivons à obtenir des oscillations, plus ou moins importantes, et plus ou moins rapides. Si nous avions des valeurs à mettre en place il serait très probable que la boule lévite de manière stable. Nous sommes cependant limités par la fréquence d'échantillonnage du système, ainsi que de la lenteur de la bobine à atteindre la valeur de courant désirée
 
+\section{Dernière séance - 08/06/2023}
+\subsection{Réglage fin du PID}
+Nous pouvons donc maintenant régler précisément, et en temps réel, notre PID. Nous ne sommes pas encore arrivés à trouver le réglage parfait, mais voici un de nos meilleurs résultats :
+
+\begin{figure} [H]
+\begin{center}
+\includegraphics[width=1\textwidth]{Schémas/Meilleur PID 1.png} 
+\end{center}
+\caption{Meilleur résultat obtenu}
+\end{figure}
+
+On constate donc une oscillation autour de la valeur moyenne. Dans les faits, on constate que la bille décolle légèrement avant de retomber, mais sans aller taper sur la partie haute. On obtient ces résultats avec les valeurs suivantes : $Kp=3.75$, $Ki=1.26$, $Kd=3.85$
+
+\begin{figure} [H]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{Schémas/Bille qui vole.png} 
+\end{center}
+\caption{La bille décolle (avant de se reposer)}
+\end{figure}
+
+\section{Conclusions du projet}
+\subsection{STM8}
+Nous avons donc utilisé un Arduino pour la partie calcul du PID et pilotage de l'ampli. Si nous avions eu le temps de débugger la librairie STM8 de l'IDE Arduino, nous aurions pu compiler nos programmes pour cette carte
+
+\subsection{PID}
+En utilisant MATLAB et autres outils de calcul, nous aurions sûrement pu calculer les valeurs de PID permettant de stabiliser la bille
+
+\subsection{Électronique analogique}
+Une fois nos valeurs de PID trouvées ou calculées, nous aurions pu concevoir un circuit analogique, en utilisant les schémas donnés en début de projet. Cependant, le calcul du PID dépends de la fréquence d'échantillonnage, donc cela n'aurait peut-être pas marché
+
+\subsection{Soudure}
+Nous aurions voulu avoir un prototype fonctionnel sur platine. Les différents problèmes rencontrés et le manque de temps nous ont poussé à nous rabattre sur une breadboard
+
+\subsection{Conclusions finales}
+Au final, ce projet a été très enrichissant et nous aura permis de découvrir un certain nombre de choses. Nous sommes cependant frustrés de ne pas être arrivés à un prototype fonctionnel
+
 \pagebreak
 \section{Bibliographie}
 Liste des sites utilisés pour la réalisation du projet :

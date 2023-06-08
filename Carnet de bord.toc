@@ -68,4 +68,12 @@
 \contentsline {subsection}{\numberline {10.4}Un nouveau problème}{27}{subsection.10.4}%
 \contentsline {subsection}{\numberline {10.5}Une nouvelle manière de calculer le PID}{27}{subsection.10.5}%
 \contentsline {subsection}{\numberline {10.6}Conclusions pour cette séance}{29}{subsection.10.6}%
-\contentsline {section}{\numberline {11}Bibliographie}{30}{section.11}%
+\contentsline {section}{\numberline {11}Dernière séance - 08/06/2023}{29}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Réglage fin du PID}{29}{subsection.11.1}%
+\contentsline {section}{\numberline {12}Conclusions du projet}{30}{section.12}%
+\contentsline {subsection}{\numberline {12.1}STM8}{30}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}PID}{30}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}Électronique analogique}{30}{subsection.12.3}%
+\contentsline {subsection}{\numberline {12.4}Soudure}{31}{subsection.12.4}%
+\contentsline {subsection}{\numberline {12.5}Conclusions finales}{31}{subsection.12.5}%
+\contentsline {section}{\numberline {13}Bibliographie}{32}{section.13}%
